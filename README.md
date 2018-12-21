@@ -1,5 +1,5 @@
 ## Tutorials for CHIRIMEN / CHIRIMEN チュートリアル
-This site contains tutorials for "CHIRIMEN for Raspberry Pi 3.
+This site contains tutorials for "CHIRIMEN BLE".
 
 このサイトは "CHIRIMEN BLE" のチュートリアルサイトです。
 
@@ -11,7 +11,7 @@ CHIRIMEN BLE はスイッチサイエンスの BLE 開発ボード、TY51822r3 �
 
 ## CHIRIMEN BLE チュートリアル
 
-CHIRIMEN Raspi3 チュートリアルの各ページはこちらでご覧頂けます:
+CHIRIMEN BLE チュートリアルの各ページはこちらでご覧頂けます:
 
 * [0. Hello World](./ble/ja/section0.md)
 * [1. GPIO 編](./ble/ja/section1.md)
