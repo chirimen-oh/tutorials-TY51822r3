@@ -11,18 +11,18 @@ CHIRIMEN BLE の使い方をおぼえて、Webアプリから「Lチカ」（LED
 ## CHIRIMEN BLE とは
 まず CHIRIMEN BLE の基礎となっている CHIRIMEN とは [Web GPIO](http://browserobo.github.io/WebGPIO/) や、[Web I2C](http://browserobo.github.io/WebI2C/) といった JavaScript の API を使用してセンサーやアクチュエーターなどの物理デバイスを Web 技術だけで制御する事ができる IoT 環境です。
 
-実際に利用できる環境として、現在 Raspberry Pi 3 上で動作する「CHIRIMEN for Raspberry Pi が CHIRIMEN コミュニティにより公開されています。
+実際に利用できる環境として、現在 Raspberry Pi 3 上で動作する「CHIRIMEN for Raspberry Pi 3 が CHIRIMEN コミュニティにより公開されています。
 
-CHIRIMEN for Raspberry Pi についての詳しい情報は以下のリンクを参照してください。  
+CHIRIMEN for Raspberry Pi 3 についての詳しい情報は以下のリンクを参照してください。  
 [CHIRIMEN 公式ページ](https://chirimen.org/)  
 [CHIRIMEN チュートリアル](https://tutorial.chirimen.org)  
 
-CHIRIMEN for Raspberry Pi の構成  
+CHIRIMEN for Raspberry Pi 3 の構成  
 ![CHIRIMEN for Raspberry Pi 3 の構成](imgs/section0/chirimenraspi.png)
 
 CHIRIMEN BLE はこれを発展させて、Bluetooth LE (BLE) でワイヤレス接続されたセンサーやアクチュエーターの BLE インターフェースボードと PC 等のブラウザの組み合わせで動作可能にした IoT 環境になります。BLE のインターフェースボードとしてはスイッチサイエンス社の BLE 開発ボード TY51822r3 を使用します。
 
-CHIRIMEN for Raspberry Pi では ラズベリーパイに接続されたセンサー等をラズベリーパイ自身の上で動作する Web アプリで制御するのに対し、CHIRIMEN BLE では、BLE ボードに接続されたセンサー等をワイヤレス接続する PC 等の上で動作する Web アプリで制御します。
+CHIRIMEN for Raspberry Pi 3 では ラズベリーパイに接続されたセンサー等をラズベリーパイ自身の上で動作する Web アプリで制御するのに対し、CHIRIMEN BLE では、BLE ボードに接続されたセンサー等をワイヤレス接続する PC 等の上で動作する Web アプリで制御します。
 
 CHIRIMEN BLE の構成  
 ![CHIRIMEN BLE の構成](imgs/section0/chirimenble.png)
@@ -65,8 +65,14 @@ TY51822r3 はピンヘッダーが無い状態で販売されています。こ�
 
 ## TY51822r3 に CHIRIMEN BLE の IO プログラムを書き込む
 
-TY51822r3 には mbed で CHIRIMEN BLE 用の IO プログラムを書き込んでおく必要があります。
-手順は [TY51822r3 に CHIRIMEN BLE IO プログラムを書き込む](bridge) を参照してください。
+TY51822r3 には mbed で CHIRIMEN BLE 用の IO プログラム (btGPIO_TY51.TY51822R3.hex) を書き込んでおく必要があります。
+ビルド済みのバイナリファイルを準備していますので下のリンクからダウンロードしてください。
+
+TY51822r3 を USB で PC と接続するとドライブとして認識するはずですので、ダウンロードした hex ファイルをそのドライブにコピーすると TY51822r3 の基板上の LED がしばらく点滅し、書き込みが行われます。
+
+[btGPIO_TY51.TY51822R3.hex](./gtGPIO_TY51.TY51822R3.hex)  
+
+TY51822r3 用の IO プログラムを自分でビルドしてみたい場合は mbed のオンラインコンパイラを使用します。この手順については [TY51822r3 の CHIRIMEN BLE IO プログラムをビルドする](bridge) を参照してください。
 
 ## PC に CHIRIMEN BLE の本体をダウンロードする
 
@@ -184,7 +190,7 @@ L チカに成功しましたか？！
 
 見やすくするためにスタイル関係等を除いて重要な部分だけを抜き出していますが、HTML では最初に ```blePolyfill.js``` という JavaScript ライブラリを読み込んでいます。  
 
-CHIRIMEN for Raspberry Pi を触った事がある方ならわかると思いますが、CHIRIMEN for Raspberry Pi では ```polyfill.js``` という名前のライブラリによって [Web GPIO API](http://browserobo.github.io/WebGPIO/) と、[Web I2C API](http://browserobo.github.io/WebI2C/) がサポートされていましたが CHIRIMEN BLE ではこれが ```blePolyfill.js``` に変わっています。
+CHIRIMEN for Raspberry Pi 3 を触った事がある方ならわかると思いますが、CHIRIMEN for Raspberry Pi 3 では ```polyfill.js``` という名前のライブラリによって [Web GPIO API](http://browserobo.github.io/WebGPIO/) と、[Web I2C API](http://browserobo.github.io/WebI2C/) がサポートされていましたが CHIRIMEN BLE ではこれが ```blePolyfill.js``` に変わっています。
 
 この [Polyfill (ブラウザ標準に未実装の機能などを利用可能にするためのライブラリ)](https://developer.mozilla.org/ja/docs/Glossary/Polyfill) を最初に読む込むことで GPIO や I2C の API が使えるようになります。
 
@@ -260,7 +266,7 @@ CHIRIMEN BLE では動作を開始する前にまずユーザーアクション�
 
 BLE デバイス ```bleDevice``` を取得した次に行うのは ```navigator.requestGPIOAccess(bleDevice)``` によって GPIO にアクセスするためのインタフェース ```gpioAccess``` の取得です。今までの [Web GPIO API](http://browserobo.github.io/WebGPIO/) でしたら ```gpioAccess``` の取得は ```navigator.requestGPIOAccess()``` のように引数なしで呼び出すのですが、ここにターゲットの BLE デバイスを渡すようになっています。
 
-さて、ここまでが CHIRIMEN BLE と CHIRIMEN Rapberry Pi のソフトウェアとしての大きな違いになる部分です。```gpioAccess``` を取得した後は今までの [Web GPIO API](http://browserobo.github.io/WebGPIO/) と違いはありません。
+さて、ここまでが CHIRIMEN BLE と CHIRIMEN Rapberry Pi 3 のソフトウェアとしての大きな違いになる部分です。```gpioAccess``` を取得した後は今までの [Web GPIO API](http://browserobo.github.io/WebGPIO/) と違いはありません。
 
 ## TY51822r3 のピン配置
 
