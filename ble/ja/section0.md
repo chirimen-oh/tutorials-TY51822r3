@@ -70,7 +70,7 @@ TY51822r3 には mbed で CHIRIMEN BLE 用の IO プログラム (btGPIO_TY51.TY
 
 TY51822r3 を USB で PC と接続するとドライブとして認識するはずですので、ダウンロードした hex ファイルをそのドライブにコピーすると TY51822r3 の基板上の LED がしばらく点滅し、書き込みが行われます。
 
-[btGPIO_TY51.TY51822R3.hex](./gtGPIO_TY51.TY51822R3.hex)  
+[btGPIO_TY51.TY51822R3.hex](./btGPIO_TY51.TY51822R3.hex)  
 
 TY51822r3 用の IO プログラムを自分でビルドしてみたい場合は mbed のオンラインコンパイラを使用します。この手順については [TY51822r3 の CHIRIMEN BLE IO プログラムをビルドする](bridge) を参照してください。
 
