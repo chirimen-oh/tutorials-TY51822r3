@@ -11,16 +11,7 @@ CHIRIMEN BLE はスイッチサイエンスの BLE 開発ボード、TY51822r3 �
 
 ## CHIRIMEN BLE チュートリアル
 
-CHIRIMEN BLE チュートリアルの各ページはこちらでご覧頂けます:
-
-* [0. Hello World](./ble/ja/section0.md)
-* [1. GPIO 編]  (./ble/ja/section1.md)
-* [2. I2C 編]  (./ble/ja/section2.md)
-* Appendix / FAQ
-  * [JavaScript 1 Day 講習 (外部 PDF)](https://webiotmakers.github.io/static/docs/2017/maebashi-js.pdf)
-  * [非同期処理 (async await版)].(/raspi3/ja/appendix0.md)
-  * [よくある質問](./ble/ja/faq.md)
-
+[CHIRIMEN BLE チュートリアルの各ページはこちらでご覧頂けます](./ble/ja/readme.md)
 
 ## Online Version / オンライン版
 Latest version of this site is hosted on https://tutorial.chirimen.org/
