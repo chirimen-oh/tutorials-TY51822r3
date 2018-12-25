@@ -14,9 +14,9 @@ CHIRIMEN BLE はスイッチサイエンスの BLE 開発ボード、TY51822r3 �
 [CHIRIMEN BLE チュートリアルの各ページはこちらでご覧頂けます](./ble/ja/readme.md)
 
 ## Online Version / オンライン版
-Latest version of this site is hosted on https://tutorial.chirimen.org/
+Latest version of this site is hosted on https://g200kg.github.io/chirimenbletutorials/
 
-このサイトのオンライン版は https://tutorial.chirimen.org/ でご覧頂けます
+このサイトのオンライン版は https://g200kg.github.io/chirimenbletutorials/ でご覧頂けます
 
 ## Feedback / フィードバック
 If you have any feedback to this tutorials, see [Feedback Page](feedback.md)

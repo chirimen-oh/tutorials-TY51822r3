@@ -20,9 +20,9 @@ CHIRIMEN for Raspberry Pi 3 についての詳しい情報は以下のリンク�
 CHIRIMEN for Raspberry Pi 3 の構成  
 ![CHIRIMEN for Raspberry Pi 3 の構成](imgs/section0/chirimenraspi.png)
 
-CHIRIMEN BLE はこれを発展させて、Bluetooth LE (BLE) でワイヤレス接続されたセンサーやアクチュエーターの BLE インターフェースボードと PC 等のブラウザの組み合わせで動作可能にした IoT 環境になります。BLE のインターフェースボードとしてはスイッチサイエンス社の BLE 開発ボード TY51822r3 を使用します。
+CHIRIMEN BLE はこれを発展させて、PC 等のブラウザと Bluetooth LE (BLE) でワイヤレス接続された IO BLE インターフェースボードとセンサーやアクチュエーターの組み合わせで動作可能にした IoT 環境になります。BLE のインターフェースボードとしてはスイッチサイエンス社の BLE 開発ボード TY51822r3 を使用します。
 
-CHIRIMEN for Raspberry Pi 3 では ラズベリーパイに接続されたセンサー等をラズベリーパイ自身の上で動作する Web アプリで制御するのに対し、CHIRIMEN BLE では、BLE ボードに接続されたセンサー等をワイヤレス接続する PC 等の上で動作する Web アプリで制御します。
+CHIRIMEN for Raspberry Pi 3 では ラズベリーパイに接続されたセンサー等をラズベリーパイ自身の上で動作する Web アプリで制御するのに対し、CHIRIMEN BLE では、BLE ボードに接続されたセンサー等をワイヤレス接続した PC 等の上で動作する Web アプリで制御します。
 
 CHIRIMEN BLE の構成  
 ![CHIRIMEN BLE の構成](imgs/section0/chirimenble.png)
