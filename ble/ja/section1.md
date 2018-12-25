@@ -1,16 +1,16 @@
 # 1. GPIO編
 
 # 概要
-CHIRIMEN for Raspberry Pi 3 (以下 CHIRIMEN Raspi3) を使ったプログラミングを通じて、Web GPIO APIの使い方を学びます。
+CHIRIMEN BLE を使ったプログラミングを通じて、Web GPIO APIの使い方を学びます。
 
-CHIRIMEN Rapi3 を初めて使う方は本チュートリアルを進める前に「[CHIRIMEN for Raspberry Pi 3 Hello World](section0.md)」で基本的な操作方法を確認しておいてください。
+CHIRIMEN BLE を初めて使う方は本チュートリアルを進める前に「[CHIRIMEN BLE Hello World](section0.md)」で基本的な操作方法を確認しておいてください。
 
-## (※1) CHIRIMEN for Raspberry Pi 3とは
-CHIRIMEN Raspi3 は Raspberry Pi 3（以下「Raspi」）上で動作する IoT プログラミング環境です。
+## (※1) CHIRIMEN BLE とは
+CHIRIMEN BLE は PC 等のブラウザと BLE インターフェースボード TY51822r3 の組み合わせで動作する IoT プログラミング環境です。
 
-[Web GPIO API](http://browserobo.github.io/WebGPIO/) や、[Web I2C API](http://browserobo.github.io/WebI2C/) といったAPIを活用したプログラミングにより、Web アプリから Raspi に接続した電子パーツを直接制御できます。 
+[Web GPIO API](http://browserobo.github.io/WebGPIO/) や、[Web I2C API](http://browserobo.github.io/WebI2C/) といったAPIを活用したプログラミングにより、Web アプリから TY51822r3 に接続した電子パーツを直接制御できます。 
 
-CHIRIMEN Raspi3 の開発やこのチュートリアルの執筆・更新は [CHIRIMEN Open Hardware コミュニティ](https://chirimen.org/) によって行われています。
+CHIRIMEN BLE の開発やこのチュートリアルの執筆・更新は [CHIRIMEN Open Hardware コミュニティ](https://chirimen.org/) によって行われています。
 
 # 1. 準備
 ## 用意するもの
