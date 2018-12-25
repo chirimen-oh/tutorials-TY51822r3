@@ -1,4 +1,10 @@
-$header-bg-color: #1e6bb8;
-$header-bg-color-secondary: #1e3b38;
+---
+---
 
-@import "{{ site.theme }}";
+@import 'jekyll-theme-cayman';
+
+.page-header {
+  color: #ffff;
+  background-color: #A067AB;
+  background-image: linear-gradient(120deg, #4073cc, #20358c);
+}
