@@ -7,7 +7,7 @@ CHIRIMEN コミュニティと W3C の Browsers and Robotics コミュニティ�
 
 現在、CHIRIMEN コミュニティでは最新の CHIRIMEN 環境をブラウザと Bluetooth LE (BLE) で接続されたインターフェースボードの組み合わせで動作させるようにメンテナンスしており、このサイトではその使い方を学ぶためのチュートリアルを掲載しています。
 
-CHIRIMEN-TY51822r3 はスイッチサイエンスの BLE 開発ボード、TY51822r3 とブラウザが動作する PC 環境があれば試す事ができます。TY51822r3 には mbed で公開されている [btGPIO_TY51](https://os.mbed.com/users/nakamura_bs/code/btGPIO_TY51/) を書き込み、PC のブラウザでは、GitHub で公開されている [chirimenble](https://github.com/Nakamura2013/chirimenble) をダウンロードしてローカルファイルにアクセスまたは公開されている URL にオンラインでアクセスします。
+CHIRIMEN-TY51822r3 はスイッチサイエンスの BLE 開発ボード、TY51822r3 とブラウザが動作する PC 環境があれば試す事ができます。TY51822r3 には公開されているファームウェア [btGPIO_TY51](https://github.com/chirimen-oh/chirimen-TY51822r3/tree/master/gc/ble_fw) を書き込み、PC のブラウザで[chirimen-TY51822r3](https://chirimen.org/chirimen-TY51822r3/)にオンラインでアクセスします。
 
 ## CHIRIMEN-TY51822r3 チュートリアル
 
