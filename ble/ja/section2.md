@@ -1,18 +1,18 @@
-# 2. I2C　基本編 (ADT7410温度センサー)
+# 2. I2C 編
 
 # 概要
 
-CHIRIMEN for Raspberry Pi 3 （以下「CHIRIMEN Raspi3」）を使ったプログラミングを通じて、[Web I2C API](https://rawgit.com/browserobo/WebI2C/master/index.html) の使い方を学びます。
+CHIRIMEN-TY51822r3 を使ったプログラミングを通じて、[Web I2C API](https://rawgit.com/browserobo/WebI2C/master/index.html) の使い方を学びます。
 
 ## 前回までのおさらい
 
-本チュートリアルを進める前に「[Hello World編](section1.md)」と、「[GPIO編](section1.md)」でCHIRIMEN Raspi3 の基本的な操作方法とプログラミング方法を確認しておいてください。
+本チュートリアルを進める前に「[Hello World 編](section1.md)」と、「[GPIO 編](section1.md)」で CHIRIMEN-TY51822r3 の基本的な操作方法とプログラミング方法を確認しておいてください。
 
 前回までのチュートリアルで学んだことは下記のとおりです。
 
-* CHIRIMEN Raspi3 では、各種 example が `~/Desktop/gc/`配下においてある。配線図も一緒に置いてある。
-* CHIRIMEN Raspi3 で利用可能なGPIO Port番号と位置は壁紙を見よう。
-* CHIRIMEN Raspi3 では Web アプリからのGPIOの制御には[Web GPIO API](http://browserobo.github.io/WebGPIO/) を利用する。GPIOポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIOポートの状態を読み取ることができる
+* CHIRIMEN-TY51822r3 では、各種 example が `gc/` 配下に配線図も一緒に置いてある。
+* CHIRIMEN-TY51822r3 では GPIOとして 0 番 ～ 7 番が利用可能。
+* CHIRIMEN-TY51822r3 では Web アプリからの GPIO の制御には [Web GPIO API](http://browserobo.github.io/WebGPIO/) を利用する。GPIO ポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIO ポートの状態を読み取ることができる
 * [async function](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function) を利用すると複数ポートの非同期コードがすっきり書ける
 
 # 1.準備
@@ -22,12 +22,11 @@ CHIRIMEN for Raspberry Pi 3 （以下「CHIRIMEN Raspi3」）を使ったプロ�
 このチュートリアル全体で必要になるハードウエア・部品は下記の通りです。
 
 * [Hello World編](section0.md) に記載の「基本ハードウエア」
-* [ジャンパーワイヤー (メス-メス)] x 4
-* 温度センサ[ADT7410](http://akizukidenshi.com/catalog/g/gM-06675/) x 1 ※付属のピンヘッダでなく、通常サイズのピンヘッダをハンダ付けしておいてください
-
+* ジャンパー線 x 適宜
+* 温度センサ[ADT7410](http://akizukidenshi.com/catalog/g/gM-06675/) x 1 
 # 2.I2Cとは
 
-[I2C](https://ja.wikipedia.org/wiki/I2C) とは2線式の同期式シリアル通信インタフェースです。「アイ・スクエア・シー」とか「アイ・ ツー・シー」などと読みます。 
+[I2C](https://ja.wikipedia.org/wiki/I2C) は 2 線式の同期式シリアル通信インタフェースです。「アイ・スクエア・シー」とか「アイ・ ツー・シー」などと読みます。 
 
 SDA（シリアルデータ）と SCL（シリアルクロック）の2本の線で通信を行います。
 
@@ -63,23 +62,23 @@ I2Cではマスターとスレーブの間で通信が行われます。常に�
 
 それでは実際に I2C に対応したモジュールを使ってみましょう。
 
-CHIRIMEN Raspi3 では、センサーなど、いくつかのI2Cモジュールのサンプルがプリインストールされています。
+CHIRIMEN-TY51822r3 には、センサーなど、いくつかの I2C モジュールのサンプルが含まれています。
 
-`/home/pi/Desktop/gc/i2c/`
+`gc/i2c/`
 
 この中から、ADT7410という温度センサーモジュールを使ってみたいと思います。
 
-Raspberry Pi 3とADT7410との接続方法(回路図)と example コードは下記フォルダに格納されています。
+TY51822r3 と ADT7410 との接続方法(回路図)と example コードは下記フォルダに格納されています。
 
-`/home/pi/Desktop/gc/i2c/i2c-ADT7410/`
+`gc/i2c/i2c-ADT7410/`
 
-> I2Cバス上、Raspi3 がマスター、ADT7410がスレーブになります。
+> I2Cバス上、TY51822r3 がマスター、ADT7410がスレーブになります。
 
 ## a. 部品と配線について
 
 まずは、下記ファイルをダブルクリックしてください。回路図が表示されます。
 
-`/home/pi/Desktop/gc/i2c/i2c-ADT7410/schematic.png`
+`gc/i2c/i2c-ADT7410/schematic.png`
 
 この回路を作成するのに必要な部品は下記の通りです。(Raspi3基本セットを除く)
 
@@ -87,7 +86,8 @@ Raspberry Pi 3とADT7410との接続方法(回路図)と example コードは下
 
 これらのパーツを下記回路図の通りに接続してみてください。
 
-![schematic](imgs/section2/schematic.png)
+![breadboard](imgs/section2/adt7410_breadboard.png)
+![schematic](imgs/section2/adt7410_schematic.png)
 
 下記がRaspi3 側の接続ピンの位置を拡大した図になります。
 

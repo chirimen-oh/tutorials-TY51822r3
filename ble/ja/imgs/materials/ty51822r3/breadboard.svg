@@ -15,7 +15,7 @@
    version="1.1"
    id="svg4641"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="breadboard2-pin.svg"
+   sodipodi:docname="breadboard.svg"
    inkscape:export-filename="C:\Users\gaito\Documents\g200kg\Work\KTEC\ChirimenBLE\images\ty51822r3.png"
    inkscape:export-xdpi="342.85712"
    inkscape:export-ydpi="342.85712">
@@ -28,9 +28,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="64.792291"
-     inkscape:cy="33.277848"
+     inkscape:zoom="5.6568542"
+     inkscape:cx="78.060721"
+     inkscape:cy="18.977666"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -43,12 +43,14 @@
      inkscape:window-maximized="0"
      inkscape:snap-text-baseline="true"
      showguides="false"
-     inkscape:snap-object-midpoints="false"
+     inkscape:snap-object-midpoints="true"
      scale-x="1"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0">
+     fit-margin-bottom="0"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-smooth-nodes="true">
     <inkscape:grid
        type="xygrid"
        id="grid4643"
@@ -83,13 +85,6 @@
        height="17.780001"
        x="-2.220446e-015"
        y="279.21997" />
-    <rect
-       style="fill:#e6e6e6;fill-opacity:1;stroke:none;stroke-width:0.33467448;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect1003"
-       width="5.079999"
-       height="5.0800042"
-       x="15.240001"
-       y="286.83997" />
     <circle
        r="0.63499999"
        cy="295.73587"
@@ -331,6 +326,12 @@
        height="0.31750387"
        x="10.4775"
        y="291.91998" />
+    <path
+       style="fill:#cccccc;fill-opacity:1;stroke-width:0.26458332"
+       d="m 14.605,287.47498 c 0,-0.31749 0.3175,-0.635 0.635,-0.635 0.3175,0 4.762501,0 5.080001,0 0.3175,0 0.635002,0.31755 0.635,0.635 -2e-6,0.31745 0,3.4925 0,3.80996 0,0.31746 -0.3175,0.63504 -0.635,0.63504 H 15.24 c -0.3175,0 -0.635,-0.3175 -0.635,-0.635 z"
+       id="rect4746"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="zzzzzzszz" />
     <rect
        style="fill:#008000;fill-opacity:1;stroke-width:0.26458332"
        id="rect4761"
@@ -926,12 +927,12 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:2.46944451px;line-height:1.25;font-family:OCRA;-inkscape-font-specification:'OCRA, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="14.951913"
+       x="15.904413"
        y="285.2135"
        id="text1133"><tspan
          sodipodi:role="line"
          id="tspan1131"
-         x="14.951913"
+         x="15.904413"
          y="285.2135"
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:2.46944451px;font-family:OCRA;-inkscape-font-specification:'OCRA, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;stroke-width:0.26458332">TY51822r3</tspan></text>
     <text
@@ -1111,28 +1112,6 @@
          y="282.15155"
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:1.05833328px;font-family:OCRA;-inkscape-font-specification:'OCRA, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#008000;stroke-width:0.26458332">10</tspan></text>
     <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:1.41111112px;line-height:1.25;font-family:OCRA;-inkscape-font-specification:'OCRA, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#008080;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="16.287266"
-       y="288.94907"
-       id="text1217"><tspan
-         sodipodi:role="line"
-         id="tspan1215"
-         x="16.287266"
-         y="288.94907"
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:1.41111112px;font-family:OCRA;-inkscape-font-specification:'OCRA, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#008080;stroke-width:0.26458332">ARM</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:1.05833328px;line-height:1.25;font-family:OCRA;-inkscape-font-specification:'OCRA, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#008080;fill-opacity:1;stroke:none;stroke-width:0.26458332"
-       x="16.285883"
-       y="291.04095"
-       id="text1221"><tspan
-         sodipodi:role="line"
-         id="tspan1219"
-         x="16.285883"
-         y="291.04095"
-         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:1.05833328px;font-family:OCRA;-inkscape-font-specification:'OCRA, Medium';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;fill:#008080;stroke-width:0.26458332">mbed</tspan></text>
-    <text
        id="text1029"
        y="282.21683"
        x="12.222541"
@@ -1143,12 +1122,18 @@
          x="12.222541"
          id="tspan1027"
          sodipodi:role="line">LED1</tspan></text>
+    <path
+       style="fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:0.26499999;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 16.192499,291.60248 h 1.270002 l -1.270002,1.27 z"
+       id="rect1031"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
     <rect
-       style="fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:0.86548454;stroke-linecap:butt;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       style="fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:0.37417811;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect1001"
-       width="2.5400002"
-       height="2.5399902"
+       width="2.5400009"
+       height="2.5400097"
        x="22.860001"
-       y="290.64999" />
+       y="290.33249" />
   </g>
 </svg>

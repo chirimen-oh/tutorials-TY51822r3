@@ -27,7 +27,7 @@
 
 * [_layouts](https://github.com/g200kg/chirimenbletutorials/tree/master/_layouts) - カスタムテンプレートファイルを保存するディレクトリ
   * [default.html](https://github.com/g200kg/chirimenbletutorials/blob/master/_layouts/default.html) - デフォルトテンプレート。参照している変数はリポジトリのメタデータや _config.yml で定義しているもの。
-* ble - CHIRIMEN BLE チュートリアル (https://github.com/g200kg/chirimenbletutorials/tree/master/ble) 用のファイルを収めたディレクトリ。
+* ble - CHIRIMEN-TY51822r3 チュートリアル (https://github.com/g200kg/chirimenbletutorials/tree/master/ble) 用のファイルを収めたディレクトリ。
 * .eslintrc.yml, .prettierrc - ESLint や Prettier で使用する JavaScript のコーディングルール定義ファイル
 * .ruby-version, Gemfile - Jekyll テンプレートでビルドするときに使う Ruby バージョンとパッケージ定義ファイル (Netlify でのビルド用)
 * README.md - トップページ (https://g200kg.github.io/chirimenbletutorials/) のファイル

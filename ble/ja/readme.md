@@ -1,6 +1,6 @@
-## CHIRIMEN BLE チュートリアル
+## CHIRIMEN-TY51822r3 チュートリアル
 
-CHIRIMEN BLE を用いた IoT システムプロトタイピングスキル習得のためのチュートリアル資料です。
+CHIRIMEN-TY51822r3 を用いた IoT システムプロトタイピングスキル習得のためのチュートリアル資料です。
 
 JavaScript プログラミング未経験者は、まず Appendix の「[JavaScript 1 Day 講習](https://webiotmakers.github.io/static/docs/2017/maebashi-js.pdf)」などで JavaScript の基本を学んでおくことをオススメします。
 
@@ -9,9 +9,9 @@ JavaScript プログラミング未経験者は、まず Appendix の「[JavaScr
 
 * [0. Hello World](section0.md)
   * [WebGPIO API](https://rawgit.com/browserobo/WebGPIO/master/) を使って定期的に LED を点滅するサンプルを動かしてみます。
-* [1. GPIO編](section1.md)
+* [1. GPIO 編](section1.md)
   * マウスクリックで操作するブラウザ画面のボタンと物理スイッチ (タクトスイッチ) の両方で LED やモーターを制御するサンプルを通じて GPIO の基本を学びます。
-* [2. I2C 基本編 (ADT7410温度センサー)](section2.md)
+* [2. I2C 編](section2.md)
   * 温度センサーの値をドライバーを使う場合と WebI2C API を直接操作する場合の 2 パターンで読み取ることで、I2C デバイス操作の基本を学びます。
 
 ## 応用編
@@ -45,6 +45,6 @@ JavaScript 未経験者や非同期処理の未経験者はチュートリアル
 
 知っておくと良い Tips 集やよくある質問はそれぞれまとめたページがあるので参考にしてください:
 
-* [TY51822r3 の CHIRIMEN BLE IO プログラムをビルドする](bridge.md)
+* [TY51822r3 の CHIRIMEN-TY51822r3 用プログラムをビルドする](bridge.md)
 * [Tips 集](tips.md)
 * [良くある質問](faq.md)

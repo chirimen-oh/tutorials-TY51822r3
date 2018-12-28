@@ -1,0 +1,28 @@
+<script src="https://chirimen.org/chirimen-TY51822r3/gc/polyfill/blePolyfill.js"></script>
+
+<button id="connect">BLE 接続</button><br/><br/>
+<div id="ledView" style="width:60px;height:60px;border-radius:30px;background:#000"></div>
+
+<script>
+async function mainFunction() {
+  const DEVICE_UUID = "928a3d40-e8bf-4b2b-b443-66d2569aed50";
+  var bleDevice = await navigator.bluetooth.requestDevice({ filters: [{ services: [DEVICE_UUID] }] });
+  var gpioAccess = await navigator.requestGPIOAccess(bleDevice);
+
+  document.getElementById("connect").hidden = true;
+  var ledView = document.getElementById("ledView");
+
+  var ledPort = gpioAccess.ports.get(7); // LED のポート番号
+  await ledPort.export("out");
+  var switchPort = gpioAccess.ports.get(5); // タクトスイッチのポート番号
+  await switchPort.export("in");
+
+  // Port 5 の状態が変わったタイミングで処理する
+  switchPort.onchange = async function toggleLed(val) {
+    val = val === 0 ? 1 : 0; // スイッチは Pull-up なので OFF で 1、LED は OFF で 0 なので反転させる
+    await ledPort.write(val);
+    ledView.style.backgroundColor = val ? "red" : "black";
+  };
+};
+document.getElementById("connect").onclick = mainFunction;
+</script>

@@ -1,0 +1,28 @@
+<script src="https://chirimen.org/chirimen-TY51822r3/gc/polyfill/blePolyfill.js"></script>
+
+<button id="connect">BLE 接続</button><br/><br/>
+<button id="onoff">ON/OFF</button><br/><br/>
+<div id="led" style="width:60px;height:60px;border-radius:30px;background:#000"></div>
+
+<script>
+const DEVICE_UUID = "928a3d40-e8bf-4b2b-b443-66d2569aed50";
+
+async function mainFunction() {
+    var bleDevice = await navigator.bluetooth.requestDevice({ filters: [{ services: [DEVICE_UUID] }] });
+    var gpioAccess = await navigator.requestGPIOAccess(bleDevice);
+    document.getElementById("connect").hidden = true;
+    var port = gpioAccess.ports.get(7);
+    await port.export("out");
+    var onoff = document.getElementById("onoff");
+    var led = document.getElementById("led");
+    onoff.onmousedown = async ()=>{
+        await port.write(1);
+        led.style.background="#f00";
+    }
+    onoff.onmouseup = async ()=>{
+        await port.write(0);
+        led.style.background="#000";
+    }
+}
+document.getElementById("connect").onclick = mainFunction;
+</script>
