@@ -74,7 +74,7 @@ TY51822r3 には mbed で CHIRIMEN-TY51822r3 用のファームウェア (btGPIO
 ### (1) ファームウェアのダウンロード
 ビルド済みのバイナリファイルが準備されていますので下のリンクからダウンロードしてください。
 
-**[btGPIO_TY51_20181220.hex](https://chirimen.org/chirimen-TY51822r3/gc/ble_fw/btGPIO_TY51_20181220.hex)**  
+**[btGPIO_TY51_20181220.hex](https://chirimen.org/chirimen-TY51822r3/bc/ble_fw/btGPIO_TY51_20181220.hex)**  
 
 ブラウザでリンクを開くとダウンロードが開始されます。
 
@@ -98,7 +98,7 @@ CHIRIMEN-TY51822r3 のアプリはブラウザ上で動作する Web アプリ�
 
 各種の example が次の URL で公開されていますのでブラウザでアクセスしてみてください。
 
-[**https://chirimen.org/chirimen-TY51822r3/gc/**](https://chirimen.org/chirimen-TY51822r3/gc/)
+[**https://chirimen.org/chirimen-TY51822r3/bc/**](https://chirimen.org/chirimen-TY51822r3/bc/)
 
 ![LIVE examples](imgs/section0/liveexamples.png)
 
@@ -154,7 +154,7 @@ LED は必要な電圧やどれくらいの明るさで光るかについて型�
 配線がうまくできたら、さっそく動かしてみましょう。
 Chrome または Chromium ブラウザで LIVE examples の LEDblink のページは開いているでしょうか?
 
-[**https://chirimen.org/chirimen-TY51822r3/gc/gpio/LEDblink/**](https://chirimen.org/chirimen-TY51822r3/gc/gpio/LEDblink/)
+[**https://chirimen.org/chirimen-TY51822r3/bc/gpio/LEDblink/**](https://chirimen.org/chirimen-TY51822r3/bc/gpio/LEDblink/)
 
 ブラウザには次のような画面が表示されるはずです。
 
@@ -203,7 +203,7 @@ L チカに成功しましたか？！
 example のコードは GitHub のリポジトリページで見る事ができます。
 L チカのコードは以下のページをみてください。
 
-[GitHub : chirimen-TY51822r3/gc/gpio/LEDblink/](https://github.com/chirimen-oh/chirimen-TY51822r3/tree/master/gc/gpio/LEDblink)
+[GitHub : chirimen-TY51822r3/bc/gpio/LEDblink/](https://github.com/chirimen-oh/chirimen-TY51822r3/tree/master/bc/gpio/LEDblink)
 
 ## HTML
 
@@ -352,10 +352,10 @@ JavaScript のコードに変更を加えると、L チカの動作を変える�
 もし LEDblink フォルダー内のファイルだけをローカルにコピーしてテストする場合は、index.html 内の `blePolyfill.js` の読み込みを 次のようにしてください。
 
 ```html
-<script src="https://chirimen.org/chirimen-TY51822r3/gc/polyfill/blePolyfill.js"></script>
+<script src="https://chirimen.org/chirimen-TY51822r3/bc/polyfill/blePolyfill.js"></script>
 ```
 
-リポジトリ内の gc/gpio/LEDblink のファイルを編集して、次のような変更をしてみましょう。
+リポジトリ内の bc/gpio/LEDblink のファイルを編集して、次のような変更をしてみましょう。
 
 * 点滅を早くしたり遅くしたりしてみる
 * GPIO ポートを他のポートに変えてみる (指定した GPIO へブレッドボードの配線を変える必要があります)
