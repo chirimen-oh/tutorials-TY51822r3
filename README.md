@@ -1,10 +1,10 @@
-## CHIRIMEN-TY51822r3 チュートリアル
+## CHIRIMEN for  TY51822r3 チュートリアル
 
-CHIRIMEN-TY51822r3 を用いた IoT システムプロトタイピングスキル習得のためのチュートリアル資料です。
+CHIRIMEN for TY51822r3 を用いた IoT システムプロトタイピングスキル習得のためのチュートリアル資料です。
 
 JavaScript プログラミング未経験者は、まず Appendix の「[JavaScript 1 Day 講習](https://webiotmakers.github.io/static/docs/2017/maebashi-js.pdf)」などで JavaScript の基本を学んでおくことをオススメします。
 
-## [0. Hello World](ble/ja/section0.md)
+## [0. Hello World 編](ble/ja/section0.md)
  [Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/) を使って定期的に LED を点滅するサンプルを動かしてみます。
 
 ## [1. GPIO 編](ble/ja/section1.md)
@@ -22,6 +22,6 @@ JavaScript 未経験者や非同期処理の未経験者はチュートリアル
 
 知っておくと良い Tips 集やよくある質問はそれぞれまとめたページがあるので参考にしてください:
 
-* [TY51822r3 の CHIRIMEN-TY51822r3 用プログラムをビルドする](ble/ja/bridge.md)
+* [TY51822r3 の CHIRIMEN for TY51822r3 用プログラムをビルドする](ble/ja/bridge.md)
 * [Tips 集] (tips.md)
 * [良くある質問] (faq.md)

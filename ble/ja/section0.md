@@ -1,15 +1,15 @@
 # Hello World
 
 # 1. 今回のゴール
-CHIRIMEN-TY51822r3 の使い方をおぼえて、Webアプリから「Lチカ」（LEDをつけたりけしたり）するプログラミングをやってみよう。
+CHIRIMEN for TY51822r3 の使い方をおぼえて、Webアプリから「Lチカ」（LEDをつけたりけしたり）するプログラミングをやってみよう。
 
 1. 今回のゴール
 2. 事前準備
 3. Lチカをやってみよう
 4. コードを眺めてみよう
 
-## CHIRIMEN-TY51822r3 とは
-まず CHIRIMEN-TY51822r3 の基礎となっている CHIRIMEN とは [Web GPIO](http://browserobo.github.io/WebGPIO/) や、[Web I2C](http://browserobo.github.io/WebI2C/) といった JavaScript の API を使用してセンサーやアクチュエーターなどの物理デバイスを Web 技術だけで制御する事ができる IoT 環境です。
+## CHIRIMEN for TY51822r3 とは
+まず CHIRIMEN for TY51822r3 の基礎となっている CHIRIMEN とは [Web GPIO](http://browserobo.github.io/WebGPIO/) や、[Web I2C](http://browserobo.github.io/WebI2C/) といった JavaScript の API を使用してセンサーやアクチュエーターなどの物理デバイスを Web 技術だけで制御する事ができる IoT 環境です。
 
 実際に利用できる環境として、現在 Raspberry Pi 3 上で動作する「CHIRIMEN for Raspberry Pi 3 が CHIRIMEN コミュニティにより公開されています。
 
@@ -20,12 +20,12 @@ CHIRIMEN for Raspberry Pi 3 についての詳しい情報は以下のリンク�
 CHIRIMEN for Raspberry Pi 3 の構成  
 ![CHIRIMEN for Raspberry Pi 3 の構成](imgs/section0/chirimenraspi.png)
 
-CHIRIMEN-TY51822r3 はこれを発展させて、PC 等のブラウザと Bluetooth LE (BLE) でワイヤレス接続された IO BLE インターフェースボードとセンサーやアクチュエーターの組み合わせで動作可能にした IoT 環境になります。BLE のインターフェースボードとしてはスイッチサイエンス社の BLE 開発ボード TY51822r3 を使用します。
+CHIRIMEN for TY51822r3 はこれを発展させて、PC 等のブラウザと Bluetooth LE (BLE) でワイヤレス接続された IO BLE インターフェースボードとセンサーやアクチュエーターの組み合わせで動作可能にした IoT 環境になります。BLE のインターフェースボードとしてはスイッチサイエンス社の BLE 開発ボード TY51822r3 を使用します。
 
-CHIRIMEN for Raspberry Pi 3 では ラズベリーパイに接続されたセンサー等をラズベリーパイ自身の上で動作する Web アプリで制御するのに対し、CHIRIMEN-TY51822r3 では、BLE ボードに接続されたセンサー等をワイヤレス接続した PC 等の上で動作する Web アプリで制御します。
+CHIRIMEN for Raspberry Pi 3 では ラズベリーパイに接続されたセンサー等をラズベリーパイ自身の上で動作する Web アプリで制御するのに対し、CHIRIMEN for TY51822r3 では、BLE ボードに接続されたセンサー等をワイヤレス接続した PC 等の上で動作する Web アプリで制御します。
 
-CHIRIMEN-TY51822r3 の構成  
-![CHIRIMEN-TY51822r3 の構成](imgs/section0/chirimenble.png)
+CHIRIMEN for TY51822r3 の構成  
+![CHIRIMEN for TY51822r3 の構成](imgs/section0/chirimenble.png)
 
 上の図では、Web アプリを動かす側が PC となっていますが Chrome または Chromium ブラウザであれば動作しますので、Raspberry Pi と BLE ボードの組み合わせでセンサーと本体が分離した組み込み型の機器などを作る事も可能です。
 
@@ -34,7 +34,7 @@ CHIRIMEN-TY51822r3 の構成
 ## 用意するもの
 
 ### 基本ハードウエア
-下記が CHIRIMEN-TY51822r3 を使ってブレッドボード上でセンサー等を動かす際に最低限必要となる基本ハードウエアです。
+下記が CHIRIMEN for TY51822r3 を使ってブレッドボード上でセンサー等を動かす際に最低限必要となる基本ハードウエアです。
 
 ![基本ハードウエア一覧](imgs/section0/hardware.jpg)
 
@@ -52,7 +52,7 @@ TY51822r3 側のコネクタは USB Micro B ですので、PC 側のコネクタ
 LED と抵抗はこのチュートリアルの全ての example で BLE の接続状態を表示するために共通して使用します。LED は色によって動作する電圧に差がありますので、もし違う色を使用する際は抵抗の値を調整する必要があります。
 
 ### L チカに必要となるパーツ
-このチュートリアルでは CHIRIMEN-TY51822r3 を動作させる最も簡単なテストである「Lチカ (えるちか)」を行います。L チカを行うために下記パーツが必要になります。
+このチュートリアルでは CHIRIMEN for TY51822r3 を動作させる最も簡単なテストである「Lチカ (えるちか)」を行います。L チカを行うために下記パーツが必要になります。
 
 ![Lチカに必要なパーツ一覧](imgs/section0/ledblink_parts.jpg)
 
@@ -67,9 +67,9 @@ TY51822r3 はピンヘッダーが無い状態で販売されています。ブ�
 
 ![ヘッダーの半田付け](imgs/section0/header.jpeg)
 
-## TY51822r3 に CHIRIMEN-TY51822r3 のファームウェアを書き込む
+## TY51822r3 に CHIRIMEN for TY51822r3 のファームウェアを書き込む
 
-TY51822r3 には mbed で CHIRIMEN-TY51822r3 用のファームウェア (btGPIO_TY51_xxxxxxxx.hex) を書き込んでおく必要があります。
+TY51822r3 には MBED で CHIRIMEN for TY51822r3 用のファームウェア (btGPIO_TY51_xxxxxxxx.hex) を書き込んでおく必要があります。
 
 ### (1) ファームウェアのダウンロード
 ビルド済みのバイナリファイルが準備されていますので下のリンクからダウンロードしてください。
@@ -92,9 +92,9 @@ MBED ドライブに (1) のファイルをコピーもしくはドラッグア�
 
 TY51822r3 用のファームウェアを自分でビルドしてみたい場合は MBED のオンラインコンパイラを使用します。この手順については [TY51822r3 のファームウェアをビルドする](bridge.md) を参照してください。
 
-## CHIRIMEN-TY51822r3 LIVE examples へのアクセス
+## CHIRIMEN for TY51822r3 LIVE examples へのアクセス
 
-CHIRIMEN-TY51822r3 のアプリはブラウザ上で動作する Web アプリです。ブラウザでアクセスするだけで動作しますが、ブラウザとしては Chrome (または Chromium) を使用してください。
+CHIRIMEN for TY51822r3 のアプリはブラウザ上で動作する Web アプリです。ブラウザでアクセスするだけで動作しますが、ブラウザとしては Chrome (または Chromium) を使用してください。
 
 各種の example が次の URL で公開されていますのでブラウザでアクセスしてみてください。
 
@@ -102,7 +102,7 @@ CHIRIMEN-TY51822r3 のアプリはブラウザ上で動作する Web アプリ�
 
 ![LIVE examples](imgs/section0/liveexamples.png)
 
-なお、CHIRIMEN-TY51822r3 の本体は GitHub で公開されています。  
+なお、CHIRIMEN for TY51822r3 の本体は GitHub で公開されています。  
 [https://github.com/chirimen-oh/chirimen-TY51822r3](https://github.com/chirimen-oh/chirimen-TY51822r3)  
 ここから全体をダウンロードしてローカルに動作環境を構築する事もできます。
 
@@ -156,17 +156,22 @@ Chrome または Chromium ブラウザで LIVE examples の LEDblink のペー�
 
 [**https://chirimen.org/chirimen-TY51822r3/bc/gpio/LEDblink/**](https://chirimen.org/chirimen-TY51822r3/bc/gpio/LEDblink/)
 
-ブラウザには次のような画面が表示されるはずです。
+ブラウザには次のような画面が表示されているはずです。
 
 ![browser](imgs/section0/ledblink_2.png)
 
-この状態ではまだ BLE の接続がされていません。次にブラウザ画面の上部にある「BLE 接続」の青いバー型のボタンをクリックします。
-
+この状態ではまだ BLE の接続がされていません。  
+次にブラウザ画面の上部にある「BLE 接続」の青いバー型のボタンをクリックします。  
 すると次のようなダイアログが表示されて Bluetooth のスキャンが行われます。
 
 ![browser](imgs/section0/ledblink_3.png)
 
-TY51822r3 がちゃんと動作していれば、リストに btGPIO2 が見つかるはずですので、それを選択して「ペア設定」のボタンを押すとダイアログと青いバーが消え、赤い LED が点滅して L チカが動作しはじめます。
+TY51822r3 がちゃんと動作していれば、リストに「btGPIO2」 という名前のデバイスが見つかるはずです。これが CHIRIMEN for TY51822r3 用のデバイスになります。  
+それを選択して「ペア設定」のボタンを押すとダイアログと青いバーが消え、接続が確立します。  
+
+ブレッドボード上ではの赤色 LED が点滅して L チカが動作しはじめます。
+
+![browser](imgs/section0/ledblink_4.png)
 
 なおこの時、青い LED も点灯しますが、こちらは BLE の接続が確立されている事を表しています。
 
@@ -174,15 +179,14 @@ TY51822r3 がちゃんと動作していれば、リストに btGPIO2 が見つ�
 * 点灯 : 接続中
 * 点滅 : 通信中 (BLE モジュール動作中)  
 
-となりますので、赤の LED の状態が切り替わるタイミングで一瞬消灯するのがわかるかと思います。
-
-![browser](imgs/section0/ledblink_4.png)
+となりますので、赤の LED の状態が切り替わるタイミングで一瞬消灯するのがわかるかと思います。  
 
 ## Lチカの様子
 
-[![blink](imgs/section0/ledblink.jpg)](imgs/section0/ledblink.mp4)
+L チカに成功しましたか？！  
+次の動画は動作中のブレッドボードの様子です。
 
-L チカに成功しましたか？！
+[![blink](imgs/section0/ledblink.jpg)](imgs/section0/ledblink.mp4)
 
 ## うまくいかなかったら?
 * 複数のブラウザやタブ等から同じデバイスに接続しようとした場合などは正常に動作しません。
@@ -224,13 +228,14 @@ L チカのコードは以下のページをみてください。
 
 見やすくするためにスタイル関係等を除いて重要な部分だけを抜き出していますが、HTML では最初に `blePolyfill.js` という JavaScript ライブラリを読み込んでいます。  
 
-CHIRIMEN for Raspberry Pi 3 を触った事がある方ならわかると思いますが、CHIRIMEN for Raspberry Pi 3 では `polyfill.js` という名前のライブラリによって [Web GPIO API](http://browserobo.github.io/WebGPIO/) と、[Web I2C API](http://browserobo.github.io/WebI2C/) がサポートされていましたが CHIRIMEN-TY51822r3 ではこれが `blePolyfill.js` に変わっています。
+CHIRIMEN for Raspberry Pi 3 を触った事がある方ならわかると思いますが、CHIRIMEN for Raspberry Pi 3 では `polyfill.js` という名前のライブラリによって [Web GPIO API](http://browserobo.github.io/WebGPIO/) と、[Web I2C API](http://browserobo.github.io/WebI2C/) がサポートされていましたが CHIRIMEN for TY51822r3 ではこれが `blePolyfill.js` に変わっています。
 
 この [Polyfill (ブラウザ標準に未実装の機能などを利用可能にするためのライブラリ)](https://developer.mozilla.org/ja/docs/Glossary/Polyfill) を最初に読む込むことで GPIO や I2C の API が使えるようになります。
 
-また、HTML には BLE を接続するためのボタンが準備されています。CHIRIMEN-TY51822r3 では WebBluetooth による BLE 接続を使用しますが、セキュリティ上の制限によりユーザーがボタンを押すなどのアクションをトリガーとして接続を開始しなくてはなりません。つまり、アプリを起動するだけで勝手にデバイスに接続して動き始めるような使い方はできません。
+また、HTML には BLE を接続するためのボタンが準備されています。CHIRIMEN for TY51822r3 では WebBluetooth による BLE 接続を使用しますが、セキュリティ上の制限によりユーザーがボタンを押すなどのアクションをトリガーとして接続を開始しなくてはなりません。つまり、アプリを起動するだけで勝手にデバイスに接続して動き始めるような使い方はできません。
 
 ## JavaScript
+
 ```javascript
 'use strict';
 
@@ -271,9 +276,9 @@ function sleep(ms){
 
 ### 注記
 
-CHIRIMEN-TY51822r3 はウェブブラウザをプログラムの実行環境として用いてシステムを構築します。ウェブブラウザが実行できるプログラムのプログラミング言語は JavaScript です。JavaScript を学んだことのない人は、まず[こちらの資料「JavaScript 1 Day 講習」](https://r.chirimen.org/1dayjs)を履修しましょう。
+CHIRIMEN for TY51822r3 はウェブブラウザをプログラムの実行環境として用いてシステムを構築します。ウェブブラウザが実行できるプログラムのプログラミング言語は JavaScript です。JavaScript を学んだことのない人は、まず[こちらの資料「JavaScript 1 Day 講習」](https://r.chirimen.org/1dayjs)を履修しましょう。
 
-## 非同期処理について
+### 非同期処理について
 
 物理デバイスやネットワーク通信などを行う際には、応答待ちの間にプログラムが全て停止してしまわないよう非同期処理を行う必要があります。
 本チュートリアルではこれを [async 関数](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/async_function) を用いて記述しています。非同期処理を知らない人や async 関数による記述をしたことのない人は、必要に応じて[こちらの資料「非同期処理 (async await版)」](appendix0.md) も参照してください。
@@ -296,35 +301,62 @@ CHIRIMEN-TY51822r3 はウェブブラウザをプログラムの実行環境と�
 
 ## 処理の解説
 
-CHIRIMEN-TY51822r3 では動作を開始する前にまずユーザーアクションをトリガーとして BLE の接続を行う必要があります。プログラムの本体となる `mainFunction` は「BLE 接続」のボタンのハンドラとして設定されており、ボタンが押された時に走り始めますが、ここで最初に行うのは `navigator.bluetooth.requestDevice()` による BLE デバイスの取得です。
+それでは L チカの example のコードを順次解説して行きます。
 
-この時に BLE のダイアログが表示されてスキャンが行われ、ユーザーが相手のデバイスを選択して「ペア設定」のボタンを押すまで一時停止する事になります。リクエストの際に `filters: [{ services: [DEVICE_UUID] }]` という指定が行われており、`DEVICE_UUID` は `"928a3d40-e8bf-4b2b-b443-66d2569aed50"` という長い ID となっていますが、これが CHIRIMEN-TY51822r3 のデバイス側のサービスを表す ID で、この CHIRIMEN-TY51822r3 を利用するすべてのプログラムで共通して使用される ID になります。
+CHIRIMEN for TY51822r3 では動作を開始する前にまずユーザーアクションをトリガーとして BLE の接続を行う必要があります。プログラムの本体となる `mainFunction` は「BLE 接続」のボタンのハンドラとして設定されており、ボタンが押された時に走り始めますが、ここで最初に行うのは
 
-BLE デバイス `bleDevice` を取得した次に行うのは `navigator.requestGPIOAccess(bleDevice)` によって GPIO にアクセスするためのインタフェース `gpioAccess` の取得です。今までの [Web GPIO API](http://browserobo.github.io/WebGPIO/) でしたら `gpioAccess` の取得は `navigator.requestGPIOAccess()` のように引数なしで呼び出すのですが、ここに接続先の BLE デバイスを渡すようになっています。
+```javascript
+var bleDevice = await navigator.bluetooth.requestDevice({
+      filters: [{ services: [DEVICE_UUID] }] });
+```
 
-さて、ここまでが CHIRIMEN-TY51822r3 と CHIRIMEN Rapberry Pi 3 のソフトウェアとしての大きな違いになる部分です。`gpioAccess` を取得した後は今までの [Web GPIO API](http://browserobo.github.io/WebGPIO/) と基本的な違いはありません。
+による BLE デバイスの取得です。
+
+この時に BLE のダイアログが表示されてスキャンが行われ、ユーザーが相手のデバイスを選択して「ペア設定」のボタンを押すまで一時停止する事になります。リクエストの際に 
+
+```javascript
+{filters: [{ services: [DEVICE_UUID] }]}
+```
+
+ という指定が行われており、`DEVICE_UUID` は
+ 
+```
+  DEVICE_UUID = "928a3d40-e8bf-4b2b-b443-66d2569aed50";
+```
+
+という長い ID となっていますが、これが CHIRIMEN for TY51822r3 のデバイス側のサービスを表す ID で、この CHIRIMEN for TY51822r3 を利用するすべてのプログラムで共通して使用される ID になります。
+
+BLE デバイス `bleDevice` を取得した次に行うのは 
+
+```
+var gpioAccess = await navigator.requestGPIOAccess(bleDevice);
+```
+
+によって GPIO にアクセスするためのインタフェース `gpioAccess` の取得です。今までの [Web GPIO API](http://browserobo.github.io/WebGPIO/) でしたら `gpioAccess` の取得は `navigator.requestGPIOAccess()` のように引数なしで呼び出すのですが、ここに接続先の BLE デバイスを渡すようになっています。
+
+さて、ここまでが CHIRIMEN for TY51822r3 と CHIRIMEN for Rapberry Pi 3 のソフトウェアとしての大きな違いになる部分です。`gpioAccess` を取得した後は今までの [Web GPIO API](http://browserobo.github.io/WebGPIO/) と基本的な違いはありません。
 
 ## TY51822r3 のピン配置
 
-ここで CHIRIMEN-TY51822r3 で使用される TY51822r3 のピン配置について説明しておきます。
+ここで CHIRIMEN for TY51822r3 で使用される TY51822r3 のピン配置について説明しておきます。
 
-TY51822r3 には全部で 32 本のピンがありますが、CHIRIMEN-TY51822r3 の環境では下の図で明るい緑で書かれた名前のようにピンが使われます。
+TY51822r3 には全部で 32 本のピンがありますが、CHIRIMEN for TY51822r3 の環境では下の図で明るい緑で書かれた名前のようにピンが使われます。
 
 ![TY51822r3 PIN 配置図](imgs/section0/ty51822r3.png)
 
-CHIRIMEN-TY51822r3 では、BLE ボード の TY51822r3 が持っているピンの内、P0_0 から P0_7 の 8 本のピン、上の図で 0 から 7 の数字が振られたピンを [Web GPIO API](http://browserobo.github.io/WebGPIO/) が扱う [GPIO (General-purpose input/output)](https://ja.wikipedia.org/wiki/GPIO) ピンとして汎用的な入出力インタフェースに利用する事ができます。
+CHIRIMEN for TY51822r3 では、BLE ボード の TY51822r3 が持っているピンの内、P0_0 から P0_7 の 8 本のピン、上の図で 0 から 7 の数字が振られたピンを [Web GPIO API](http://browserobo.github.io/WebGPIO/) が扱う [GPIO (General-purpose input/output)](https://ja.wikipedia.org/wiki/GPIO) ピンとして汎用的な入出力インタフェースに利用する事ができます。
 
-CHIRIMEN-TY51822r3 の GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。ここに接続した LED は数 mA の電流を流すことによって点灯できる電子部品です。LED は一定以上の電圧 (赤色 LED だと概ね 1.8V 程度、青色 LED だと 3.1V 程度) 以上になると点灯する性質を持っており、印加する電圧を 3.3V (点灯)、0V (消灯) と変化させることで L チカを実現します。
+CHIRIMEN for TY51822r3 の GPIO 端子は、GND 端子との間に、0V もしくは 3.3V の電圧を印加(出力)したり、逆に 0V もしくは 3.3V の電圧を検知(入力)したりすることができます。ここに接続した LED は数 mA の電流を流すことによって点灯できる電子部品です。LED は一定以上の電圧 (赤色 LED だと概ね 1.8V 程度、青色 LED だと 3.1V 程度) 以上になると点灯する性質を持っており、印加する電圧を 3.3V (点灯)、0V (消灯) と変化させることで L チカを実現します。
 
-また、上の図で LED1 と書かれているピンがこのサンプルで青い LED を接続したピンで、CHIRIMEN-TY51822r3 の環境では BLE の接続状態を表す専用の出力ピンとして使用されます。
+また、上の図で LED1 と書かれているピンがこのサンプルで青い LED を接続したピンで、CHIRIMEN for TY51822r3 の環境では BLE の接続状態を表す専用の出力ピンとして使用されます。
 
-なお、このサンプルでは使用しませんが、SCL、SDA のピンは [Web I2C API](https://rawgit.com/browserobo/WebI2C/master/index.html) で使用するピンです。このピンの配置は CHIRIMEN-TY51822r3 環境でのもので、MBED 公式の TY51822r3 のピン配置とは異なる事に注意してください。
+なお、このサンプルでは使用しませんが、SCL、SDA のピンは [Web I2C API](https://rawgit.com/browserobo/WebI2C/master/index.html) で使用するピンです。このピンの配置は CHIRIMEN for TY51822r3 環境でのもので、MBED 公式の TY51822r3 のピン配置とは異なる事に注意してください。
 
 ## GPIO のドライブ能力
 
 GPIO 端子に LED 等の部品を接続する際には端子がどれくらいまで電流を流せるかというドライブ能力にも注意する必要があります。TY51822r3 は Raspberry Pi や Arduino などの IoT 関係でよく使われるボードに比べてドライブ能力の制限が厳しくなっています。  
 
-TY51822r3 の公式の仕様では GPIO 端子が (標準の設定では) ドライブできる電流は 0.5 mA までとなっており、LED を直接繋ぐにはそもそも心もとない数字です。CHIRIMEN-TY51822r3 の環境では GPIO 端子の high drive 設定という特別な機能を利用して、GPIO の端子 1 本あたり 5 mA までの電流をドライブできる設定になっています。
+TY51822r3 の公式の仕様では GPIO 端子が (標準の設定では) ドライブできる電流は 0.5 mA までとなっており、LED を直接繋ぐにはそもそも心もとない数字です。CHIRIMEN for TY51822r3 の環境では GPIO 端子の high drive 設定という特別な機能を利用して、GPIO の端子 1 本あたり 5 mA までの電流をドライブできる設定になっています。
 
 ただしもう一つ、デバイス全体での電流が 15 mA までという制限があり、この範囲内で使用する必要があります。つまり、LED に 5 mA の電流を流すのであれば LED を同時に 3 個光らせるのが限界という事に注意してください。
 
@@ -361,14 +393,14 @@ JavaScript のコードに変更を加えると、L チカの動作を変える�
 * GPIO ポートを他のポートに変えてみる (指定した GPIO へブレッドボードの配線を変える必要があります)
 * index.html にボタンなどのインターフェースを作ってみて、押すと LED が反応するよう変えてみる
 
-ローカルにコピーしたファイルで CHIRIMEN-TY51822r3 を動かすには単にその `index.html` ファイルをブラウザにドロップする等で開いてください。
+ローカルにコピーしたファイルで CHIRIMEN for TY51822r3 を動かすには単にその `index.html` ファイルをブラウザにドロップする等で開いてください。
 
-注記 : 現在の所、HTML ファイルをローカルファイルとして file:// で開くだけで CHIRIMEN-TY51822r3 を動かす事ができますが、近年セキュリティポリシーの面からこのような動作に対する制限が厳しくなりつつあります。将来的には file:// で開いたファイルで bluetooth を使う事に対して何らかの制限がかかる可能性が無くはありません。ローカルサーバーを立ててそこにファイルを配置し、https:// でアクセスする事が最終的には確実な手段として残る事になると思われます。
+注記 : 現在の所、HTML ファイルをローカルファイルとして file:// で開くだけで CHIRIMEN for TY51822r3 を動かす事ができますが、近年セキュリティポリシーの面からこのような動作に対する制限が厳しくなりつつあります。将来的には file:// で開いたファイルで bluetooth を使う事に対して何らかの制限がかかる可能性が無くはありません。ローカルサーバーを立ててそこにファイルを配置し、https:// でアクセスする事が最終的には確実な手段として残る事になると思われます。
 
 # まとめ
 このチュートリアルでは、下記を実践してみました。
 
-* CHIRIMEN-TY51822r3 の起動
+* CHIRIMEN for TY51822r3 の起動
 * L チカのサンプルを動かしてみた
 * L チカのコードを変更してみた
 
