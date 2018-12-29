@@ -4,9 +4,9 @@ repository: chirimen-oh/tutorials
 title: '<a href="/" style="color: white">CHIRIMEN チュートリアル</a>'
 description: >-
   <a href="https://chirimen.org/" style="color: white">CHIRIMEN</a>-TY51822r3
-  を初めて使う方向けの <a href="/ble/ja/" style="color: white">チュートリアル集</a> です<br>
-  <a href="/ble/ja/" style="color: white">目次のページ</a> からチュートリアルの各ページをご覧ください<br>
-  Enjoy <a href="/ble/en/" style="color: white">Tutorials for CHIRIMEN-TY51822r3</a>
+  を初めて使う方向けの <a href="https://chirimen.org/tutorials-TY51822r3/ble/ja/" style="color: white">チュートリアル集</a> です<br>
+  <a href="https://chirimen.org/tutorials-TY51822r3/ble/ja/" style="color: white">目次のページ</a> からチュートリアルの各ページをご覧ください<br>
+  Enjoy <a href="https://chirimen.org/tutorials-TY51822r3/ble/en/" style="color: white">Tutorials for CHIRIMEN-TY51822r3</a>
 show_downloads: false
 # google_analytics:
 include: _redirects
