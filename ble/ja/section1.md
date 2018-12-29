@@ -472,8 +472,7 @@ LED1 に接続されている青色 LED と 5 番ポートに接続されてい�
 * [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials-TY51822r3/tree/master/ble/ja/examples)
 
 * ブラウザで開くページ (各ステップ)
-  * [マウスで画面のボタンを押している間だけ LED が光る]
-  (https://chirimen.org/tutorials-TY51822r3/ble/ja/examples/test_click_led.html)
+  * [マウスで画面のボタンを押している間だけ LED が光る](https://chirimen.org/tutorials-TY51822r3/ble/ja/examples/test_click_led.html)
   * [タクトスイッチを押している間だけ LED が光る (ポーリング)](https://chirimen.org/tutorials-TY51822r3/ble/ja/examples/test_switch_poll.html)
   * [タクトスイッチを押している間だけ LED が光る (onchange)](https://chirimen.org/tutorials-TY51822r3/ble/ja/examples/test_switch_onchange.html)
 

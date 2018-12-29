@@ -1,27 +1,3 @@
 ## CHIRIMEN-TY51822r3 チュートリアル
 
-CHIRIMEN-TY51822r3 を用いた IoT システムプロトタイピングスキル習得のためのチュートリアル資料です。
-
-JavaScript プログラミング未経験者は、まず Appendix の「[JavaScript 1 Day 講習](https://webiotmakers.github.io/static/docs/2017/maebashi-js.pdf)」などで JavaScript の基本を学んでおくことをオススメします。
-
-## [0. Hello World](section0.md)
- [Web GPIO API](https://rawgit.com/browserobo/WebGPIO/master/) を使って定期的に LED を点滅するサンプルを動かしてみます。
-
-## [1. GPIO 編](section1.md)
- マウスクリックで操作するブラウザ画面のボタンと物理スイッチ (タクトスイッチ) の両方で LED やモーターを制御するサンプルを通じて GPIO の基本を学びます。
-
-## 2. I2C 編　(準備中)
- いろいろな I2C デバイス操作を学びます。
-
-
-## Appendix / FAQ
-JavaScript 未経験者や非同期処理の未経験者はチュートリアルと合わせてこちらをご覧ください:
-
-* [JavaScript 1 Day 講習 (外部 PDF)](https://webiotmakers.github.io/static/docs/2017/maebashi-js.pdf)
-* [非同期処理 (async await版)](appendix0.md)
-
-知っておくと良い Tips 集やよくある質問はそれぞれまとめたページがあるので参考にしてください:
-
-* [TY51822r3 の CHIRIMEN-TY51822r3 用プログラムをビルドする](bridge.md)
-* [Tips 集] (tips.md)
-* [良くある質問] (faq.md)
+[トップに戻る](../../readme.md)
