@@ -10,7 +10,7 @@ CHIRIMEN-TY51822r3 を使ったプログラミングを通じて、[Web I2C API]
 
 前回までのチュートリアルで学んだことは下記のとおりです。
 
-* CHIRIMEN-TY51822r3 では、各種 example が `gc/` 配下に配線図も一緒に置いてある。
+* CHIRIMEN-TY51822r3 では、各種 example が `bc/` 配下に配線図も一緒に置いてある。
 * CHIRIMEN-TY51822r3 では GPIOとして 0 番 ～ 7 番が利用可能。
 * CHIRIMEN-TY51822r3 では Web アプリからの GPIO の制御には [Web GPIO API](http://browserobo.github.io/WebGPIO/) を利用する。GPIO ポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIO ポートの状態を読み取ることができる
 * [async function](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function) を利用すると複数ポートの非同期コードがすっきり書ける
@@ -64,13 +64,13 @@ I2Cではマスターとスレーブの間で通信が行われます。常に�
 
 CHIRIMEN-TY51822r3 には、センサーなど、いくつかの I2C モジュールのサンプルが含まれています。
 
-`gc/i2c/`
+`bc/i2c/`
 
 この中から、ADT7410という温度センサーモジュールを使ってみたいと思います。
 
 TY51822r3 と ADT7410 との接続方法(回路図)と example コードは下記フォルダに格納されています。
 
-`gc/i2c/i2c-ADT7410/`
+`bc/i2c/i2c-ADT7410/`
 
 > I2Cバス上、TY51822r3 がマスター、ADT7410がスレーブになります。
 
@@ -78,7 +78,7 @@ TY51822r3 と ADT7410 との接続方法(回路図)と example コードは下�
 
 まずは、下記ファイルをダブルクリックしてください。回路図が表示されます。
 
-`gc/i2c/i2c-ADT7410/schematic.png`
+`bc/i2c/i2c-ADT7410/schematic.png`
 
 この回路を作成するのに必要な部品は下記の通りです。(Raspi3基本セットを除く)
 
@@ -136,7 +136,7 @@ ADT7410は`0x48`がデフォルトの SlaveAddress で、A0,A1ピンの HIGH/LOW
 
 ADT7410 のためのサンプルコードは先ほどの配線図と同じフォルダに格納されています。
 
-`/home/pi/Desktop/gc/i2c/i2c-ADT7410/index.html`
+`/home/pi/Desktop/bc/i2c/i2c-ADT7410/index.html`
 
 ダブルクリックすると、ブラウザが起動し下記のような画面になります。
 
@@ -154,7 +154,7 @@ ADT7410 は I2C という通信方式でセンサーデータを送出するモ�
 
 それでは、コードを見てみましょう。
 
-`/home/pi/Desktop/gc/i2c/i2c-ADT7410/` 配下の `index.html`、`main.js` をみてみます。
+`/home/pi/Desktop/bc/i2c/i2c-ADT7410/` 配下の `index.html`、`main.js` をみてみます。
 
 ## d-1. index.html
 
@@ -174,7 +174,7 @@ index.html
   </body>
 ```
 
-まず最初に読み込んでいるのが `polyfill.js`。Web GPIO API の時に出てきた `https://chirimen.org/chirimen-raspi3/gc/polyfill/polyfill.js` と同じ Web GPIO API と Web I2C API の Polyfill です。
+まず最初に読み込んでいるのが `polyfill.js`。Web GPIO API の時に出てきた `https://chirimen.org/chirimen-raspi3/bc/polyfill/polyfill.js` と同じ Web GPIO API と Web I2C API の Polyfill です。
 
 次に読み込んでいるのが、`i2c-ADT7410.js`。このファイルは、Web I2C API を使って ADT7410 との通信を行うためのドライバーとなるライブラリです。
 
@@ -266,7 +266,7 @@ CHIRIMEN Raspi3の example として用意されているサンプルコード�
 
 example と同じコードを書いても面白くないので、今回は`i2c-ADT7410.js`は使わずに、[JSFiddle](https://jsfiddle.net/) を使って一通り温度を読み込む処理を書いてみましょう。
 
-もし、ブラウザで `/home/pi/Desktop/gc/i2c/i2c-ADT7410/index.html` 開いている場合、一度閉じておいてください。
+もし、ブラウザで `/home/pi/Desktop/bc/i2c/i2c-ADT7410/index.html` 開いている場合、一度閉じておいてください。
 
 ## JSFiddleでHTMLを書く
 
@@ -276,7 +276,7 @@ JSFiddle の HTMLペインに Polyfill の読み込みと、温度表示のた�
 
 ```html
 <div id="ADT7410value">---</div>
-<script src="https://chirimen.org/chirimen-raspi3/gc/polyfill/polyfill.js"></script>
+<script src="https://chirimen.org/chirimen-raspi3/bc/polyfill/polyfill.js"></script>
 ```
 
 こんな感じで良いでしょう。

@@ -1,10 +1,10 @@
 # Feedback
 
-このサイトの内容への提案や誤りの指摘などがある場合は [Gibhub Issues](https://github.com/g200kg/chirimenbletutorials/issues) からお願いします。
+このサイトの内容への提案や誤りの指摘などがある場合は [Gibhub Issues](https://github.com/chirimen-oh/tutorials-TY51822r3/issues) からお願いします。
 
 サイトのテキスト本文は Markdown で書かれたファイルを GitHub Pages デフォルトで用意されているシンプルな [Jekyll テンプレート (Cayman)](https://github.com/pages-themes/cayman) で成形して出力しているものになります。
 
-指摘や修正の提案を [Issues](https://github.com/g200kg/chirimenbletutorials/issues) で行って頂く以外にも、プルリクを送っていただくなどでも勿論構いません。
+指摘や修正の提案を [Issues](https://github.com/chirimen-oh/tutorials-TY51822r3/issues) で行って頂く以外にも、プルリクを送っていただくなどでも勿論構いません。
 
 <!--
 また、CHIRIMEN コミュニティメンバーで [チュートリアル用リポジトリ](https://github.com/chirimen-oh/tutorials/) の書き込み権限を持っている方は、Web ブラウザで Github にアクセスして各ページの markdown ファイルを直接編集していただくなどしても勿論構いません。
@@ -18,7 +18,7 @@
 具体的には、Netlify 側の機能として、**各ページの URL は元ファイル名に関わらず小文字に統一** (大文字を含む URL にアクセスすると 301 で小文字 URL にリダイレクトされる)、**末尾の .html や .md あるいは / もなしでアクセス** できるようになります。リポジトリのファイルと Web での URL が異なるのは望ましくないため、**ディレクトリ名や Markdown ファイル名には原則全て小文字を使用してください**。また、Markdown ファイル内での **相対リンクについては GitHub Pages の時と同様 .md 付きの相対リンクで記述してください**。そうすることでサーバ側のビルド時に自動的に .md なしの相対リンクに変換されるので、サイト上でのリンクも GitHub Web 上でのリンクも両方が有効になります。
 
 なお、Netlify でのビルドログなどは Github のコミット通知と併せて下記コミュニティ Slack の #github チャンネルに通知されるようになっています。編集結果が反映されない場合などはビルドに失敗していないか確認してください。
--->
+
 ## ファイル構成とテンプレートの詳細
 
 [チュートリアル用リポジトリ](https://github.com/g200kg/chirimenbletutorials) 配下にある全ての markdown (.md) ファイルに対してそれに対応する HTML ページが生成されるシンプルな仕組みです。このページは /feedback.md ファイルから生成されているし、その他もリポジトリ内の markdown ファイルは拡張子 .md を外して全て小文字に統一されたパスの URL でアクセス可能になります。
@@ -49,3 +49,4 @@ Jekyll で書かれた Github Pages の詳細については以下のドキュ�
 ## コミュニティ Slack
 
 その他、何か不明な点がある場合は [コミュニティの Slack](https://chirimen-oh.slack.com/) (未参加の場合は [自己登録フォーム](https://docs.google.com/forms/d/1GzkGfCcsRn4A6-uHPsLu2LszkqKcNJ3sFI4XRishHsE/viewform) から参加してください) にてご相談ください。宜しくお願いします。
+-->
