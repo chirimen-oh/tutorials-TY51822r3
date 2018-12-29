@@ -469,11 +469,12 @@ LED1 に接続されている青色 LED と 5 番ポートに接続されてい�
 
 このチュートリアルで書いたコードは以下のページで参照できます:
 
-* [GitHub リポジトリで参照](https://github.com/g200kg/chirimenbletutorials/tree/master/ble/ja/examples)
+* [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials-TY51822r3/tree/master/ble/ja/examples)
 
 * ブラウザで開くページ (各ステップ)
-  * [マウスで画面のボタンを押している間だけ LED が光る](https://g200kg.github.io/chirimenbletutorials/ble/ja/examples/test_click_led.html)
-  * [タクトスイッチを押している間だけ LED が光る (ポーリング)](https://g200kg.github.io/chirimenbletutorials/ble/ja/examples/test_switch_poll.html)
-  * [タクトスイッチを押している間だけ LED が光る (onchange)](https://g200kg.github.io/chirimenbletutorials/ble/ja/examples/test_switch_onchange.html)
+  * [マウスで画面のボタンを押している間だけ LED が光る]
+  (https://chirimen.org/tutorials-TY51822r3/ble/ja/examples/test_click_led.html)
+  * [タクトスイッチを押している間だけ LED が光る (ポーリング)](https://chirimen.org/tutorials-TY51822r3/ble/ja/examples/test_switch_poll.html)
+  * [タクトスイッチを押している間だけ LED が光る (onchange)](https://chirimen.org/tutorials-TY51822r3/ble/ja/examples/test_switch_onchange.html)
 
 次の『[チュートリアル 2. I2C 編]』では Web I2C API の学習をします。

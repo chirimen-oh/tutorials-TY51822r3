@@ -14,9 +14,9 @@ CHIRIMEN-TY51822r3 はスイッチサイエンスの BLE 開発ボード、TY518
 [CHIRIMEN-TY51822r3 チュートリアルの各ページはこちらでご覧頂けます](./ble/ja/readme.md)
 
 ## Online Version / オンライン版
-Latest version of this site is hosted on https://g200kg.github.io/chirimenbletutorials/
+Latest version of this site is hosted on https://chirimen.org/tutorials-TY51822r3/
 
-このサイトのオンライン版は https://g200kg.github.io/chirimenbletutorials/ でご覧頂けます
+このサイトのオンライン版は https://chirimen.org/tutorials-TY51822r3/ でご覧頂けます
 
 ## Feedback / フィードバック
 If you have any feedback to this tutorials, see [Feedback Page](feedback.md)

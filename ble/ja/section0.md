@@ -374,6 +374,6 @@ JavaScript のコードに変更を加えると、L チカの動作を変える�
 
 このチュートリアルは以下のリポジトリで参照できます:
 
-* [GitHub リポジトリで参照](https://github.com/g200kg/chirimenbletutorials/blob/master/ble/ja/section0.md)
+* [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials-TY51822r3/blob/master/ble/ja/section0.md)
 
 次の『[チュートリアル 1. GPIO編](./section1.md)』では GPIO の入力方法について学びます。
