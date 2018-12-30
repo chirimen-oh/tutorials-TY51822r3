@@ -1,4 +1,4 @@
-# 1. GPIO編
+# 1. GPIO 編
 
 # 概要
 
@@ -420,7 +420,7 @@ Web GPIO API の機能が一通り確認できましたので、最後に違う�
 
 ## MOSFET とは
 
-MOSFET は[電界効果トランジスタ (FET)](https://ja.wikipedia.org/wiki/%E9%9B%BB%E7%95%8C%E5%8A%B9%E6%9E%9C%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B8%E3%82%B9%E3%82%BF) の一種で、主にスイッチング素子として利用される部品です。
+MOSFET は[電界効果トランジスタ (FET)](https://ja.wikipedia.org/wiki/%E9%9B%BB%E7%95%8C%E5%8A%B9%E6%9E%9C%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B8%E3%82%B9%E3%82%BF) の一種で、主にスイッチング素子として利用される部品です。今回使用するモーターだけではなく、リレーやソレノイド等の大きな電流が必要な部品も GPIO の出力から MOSFET を使ったスイッチング回路を利用して動かす事が可能です。
 
 [MOSFET(Wikipedia)](https://ja.wikipedia.org/wiki/MOSFET)
 

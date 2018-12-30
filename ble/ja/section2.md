@@ -2,47 +2,46 @@
 
 # 概要
 
-CHIRIMEN-TY51822r3 を使ったプログラミングを通じて、[Web I2C API](https://rawgit.com/browserobo/WebI2C/master/index.html) の使い方を学びます。
+CHIRIMEN for TY51822r3 を使ったプログラミングを通じて、[Web I2C API](https://rawgit.com/browserobo/WebI2C/master/index.html) の使い方を学びます。
 
 ## 前回までのおさらい
 
-本チュートリアルを進める前に「[Hello World 編](section1.md)」と、「[GPIO 編](section1.md)」で CHIRIMEN-TY51822r3 の基本的な操作方法とプログラミング方法を確認しておいてください。
+本チュートリアルを進める前に「[Hello World 編](section1.md)」と、「[GPIO 編](section1.md)」で CHIRIMEN for TY51822r3 の基本的な操作方法とプログラミング方法を確認しておいてください。
 
 前回までのチュートリアルで学んだことは下記のとおりです。
 
-* CHIRIMEN-TY51822r3 では、各種 example が `bc/` 配下に配線図も一緒に置いてある。
-* CHIRIMEN-TY51822r3 では GPIOとして 0 番 ～ 7 番が利用可能。
-* CHIRIMEN-TY51822r3 では Web アプリからの GPIO の制御には [Web GPIO API](http://browserobo.github.io/WebGPIO/) を利用する。GPIO ポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIO ポートの状態を読み取ることができる
-* [async function](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function) を利用すると複数ポートの非同期コードがすっきり書ける
+* CHIRIMEN for TY51822r3 の各種 examples は [chirimen-TY51822r3 LIVE examples](https://chirimen.org/chirimen-TY51822r3/bc/) のページにある。
+* CHIRIMEN for TY51822r3 では GPIO として 0 番 ～ 7 番が利用できる。
+* CHIRIMEN for TY51822r3 では Web アプリからの GPIO の制御には [Web GPIO API](http://browserobo.github.io/WebGPIO/) を利用する。GPIO ポートは「出力モード」に設定することで LED の ON/OFF などが行える。また「入力モード」にすることで、GPIO ポートの状態を読み取ることができる。
+* [async function](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Statements/async_function) を利用すると非同期処理のコードがすっきり書ける。
 
-# 1.準備
+# 1. 準備
 
 ## 用意するもの
 
 このチュートリアル全体で必要になるハードウエア・部品は下記の通りです。
 
-* [Hello World編](section0.md) に記載の「基本ハードウエア」
-* ジャンパー線 x 適宜
+* [Hello World 編](section0.md) に記載の「基本ハードウエア」
 * 温度センサ[ADT7410](http://akizukidenshi.com/catalog/g/gM-06675/) x 1 
-# 2.I2Cとは
+
+# 2. I2C とは
 
 [I2C](https://ja.wikipedia.org/wiki/I2C) は 2 線式の同期式シリアル通信インタフェースです。「アイ・スクエア・シー」とか「アイ・ ツー・シー」などと読みます。 
 
-SDA（シリアルデータ）と SCL（シリアルクロック）の2本の線で通信を行います。
-
 ![i2c-bus](imgs/section2/i2c-bus.png)
 
-上図のように、i2cの SDA、SCL は複数のモジュール間で共有します。（「I2Cバス」と言います。）
+上図のように I2C の SDA、SCL は複数のデバイス間で共有します。（「I2C バス」と言います。）
 
-I2Cではマスターとスレーブの間で通信が行われます。常にマスター側からスレーブ側に要求が行われます。スレーブ側からマスター側へ要求を行うことはできません。
+SDA（シリアルデータ）と SCL（シリアルクロック）の2本の線だけで複数のデバイスとの通信を行う事ができる事が特長で、
+例えば温度や光などを検知する各種のセンサーやアクチュエーターでも I2C に対応したものが多くあり、いわゆる IoT 関係のアプリでも広く使用されています。
 
-マスターは、スレーブが持つ「SlaveAddress」を用いて、特定のスレーブとの通信を行います。
+I2C ではマスターとスレーブの間で通信が行われ、常にマスター側からスレーブ側に要求が行われます。スレーブ側からマスター側へ要求を行うことはできません。
 
-このため、同じI2Cバス上に同じSlaveAddressのスレーブを繋ぐことはできません。
+マスターは、各スレーブが持つ「SlaveAddress」を用いて、特定のスレーブとの通信を行います。このため、同じ I2C バス上に同じ SlaveAddress のスレーブを繋ぐことはできません。
 
 ![i2c-bus2](imgs/section2/i2c-bus2.png)
 
-通信するモジュール同士が同一基板上にない場合には、SDA、SCL の2本の通信線に加え電源やGNDの線を加えて4本のケーブルを用いて接続するのが一般的です。
+通信するモジュール同士が同一基板上にない場合には SDA、SCL の2本の通信線に加え電源と GND の線を加えて 4 本のケーブルを用いて接続するのが一般的です。
 
 詳細は下記をご参照ください。
 
@@ -52,50 +51,49 @@ I2Cではマスターとスレーブの間で通信が行われます。常に�
 
 ここでは I2C の概要として下記を押さえておきましょう。
 
-* I2Cには複数のモジュールが繋がる（I2Cバス）
-* I2Cに繋がるモジュールにはマスターとスレーブがある
-* I2Cでは必ずマスターからスレーブに対して通信要求が行われる
-* I2Cスレーブは SlaveAddress を持っている
-* 同じ I2C バスに同じ SlaveAddress のスレーブは繋げない
+* I2C には複数のデバイスが繋がる（I2C バス）
+* I2C に繋がるデバイスにはマスターとスレーブがある
+* I2C では必ずマスターからスレーブに対して通信要求が行われる
+* I2C スレーブはそれぞれのスレーブアドレスを持っている
+* 同じ I2C バスに同じスレーブアドレスのスレーブは繋げない
 
-# 3.温度センサー(ADT7410)を使ってみる
+# 3. 温度センサー (ADT7410) を使ってみる
 
 それでは実際に I2C に対応したモジュールを使ってみましょう。
 
-CHIRIMEN-TY51822r3 には、センサーなど、いくつかの I2C モジュールのサンプルが含まれています。
+CHIRIMEN for TY51822r3 には、センサーなど、いくつかの I2C モジュールのサンプルが含まれています。  
+[LIVE examples](https://chirimen.org/chirimen-TY51822r3/bc/) のページに I2C 対応デバイスを使った examples のリストがありますので、アクセスしてみてください。
 
-`bc/i2c/`
+![exampleList](imgs/section2/i2cexamples_list.png)
 
 この中から、ADT7410という温度センサーモジュールを使ってみたいと思います。
+I2Cバス上、TY51822r3 がマスター、ADT7410がスレーブになります。
 
-TY51822r3 と ADT7410 との接続方法(回路図)と example コードは下記フォルダに格納されています。
+次のリンクで ADT7410 を使った LIVE example ページが開きます。
 
-`bc/i2c/i2c-ADT7410/`
-
-> I2Cバス上、TY51822r3 がマスター、ADT7410がスレーブになります。
+[i2c-ADT7410](https://chirimen.org/chirimen-TY51822r3/bc/i2c/i2c-ADT7410/)
 
 ## a. 部品と配線について
 
-まずは、下記ファイルをダブルクリックしてください。回路図が表示されます。
-
-`bc/i2c/i2c-ADT7410/schematic.png`
-
-この回路を作成するのに必要な部品は下記の通りです。(Raspi3基本セットを除く)
+基本セット以外に必要な部品は次の通りです。
 
 ![parts](imgs/section2/parts.jpg)
 
-これらのパーツを下記回路図の通りに接続してみてください。
+今回使用する ADT7410 は秋月電子で販売されているブレッドボードで使えるようにモジュール化されたものです。
 
-![breadboard](imgs/section2/adt7410_breadboard.png)
+[ADT7410使用 I2C 温度センサモジュール](http://akizukidenshi.com/catalog/g/gM-06675/)
+
+基板とピンヘッダーが同梱されていますが、できれば、L 字型のピンヘッダーを半田付けしてブレッドボードに差した時に立てられるようにした方が使いやすいでしょう。
+
+さて、[i2c-ADT7410](https://chirimen.org/chirimen-TY51822r3/bc/i2c/i2c-ADT7410/) のページでは、次のようにブレッドボードの配線図付きで ADT7410 を使用した温度センサーのアプリが開きます。これらのパーツを画面の通りに接続してみてください。
+
+![breadboard](imgs/section2/adt7410_1.png)  
+
+回路図は次の通りです。  
+
 ![schematic](imgs/section2/adt7410_schematic.png)
 
-下記がRaspi3 側の接続ピンの位置を拡大した図になります。
-
-間違えないよう接続をお願いします。
-
-![I2Cで利用するピンの位置](imgs/section2/I2C.png)
-
-## b. 接続がうまくいったか確認する
+<!--## b. 接続がうまくいったか確認する
 
 ここで、ターミナルを起動して下記コマンドを入力してみてください。
 
@@ -334,3 +332,4 @@ ADT7410 を指で触って温度が変わることを確認してみてくださ
 
 次の『[チュートリアル 3. I2C　応用編（その他のセンサー）](section3.md)』では加速度センサーなど他のセンサーも触っていきます。
 
+-->
