@@ -1,6 +1,7 @@
 # 0. Hello World 編
 
 # 1. 今回のゴール
+
 CHIRIMEN for TY51822r3 の使い方をおぼえて、Webアプリから「Lチカ」（LEDをつけたりけしたり）するプログラミングをやってみよう。
 
 1. 今回のゴール
@@ -28,6 +29,9 @@ CHIRIMEN for TY51822r3 の構成
 ![CHIRIMEN for TY51822r3 の構成](imgs/section0/chirimenble.png)
 
 上の図では、Web アプリを動かす側が PC となっていますが Chrome または Chromium ブラウザであれば動作しますので、Raspberry Pi と BLE ボードの組み合わせでセンサーと本体が分離した組み込み型の機器などを作る事も可能です。
+
+もし CHIRIMEN for Raspberry Pi 3 について既に知識があり、CHIRIMEN for TY51822r3 での相違点を知りたい場合は、
+[CHIRIMEN for TY51822r3 と CHIRIMEN for Raspberry Pi 3 の違い](diff.md) のページをご覧ください。
 
 # 2. 事前準備 (機材確認)
 
@@ -104,7 +108,7 @@ Chrome のバージョンを確認して必要ならアップデートしてお�
 ### Windows の場合
 
 Windows の場合は WebBluetooth 機能がまだ実験的機能扱いのため、現在のところ次の設定も必要です。  
-(2018年12月30日現在、リリースされている Windows 版 Chrome ではこの操作が必要ですが、今後の Chrome のアップデートで不要になります)
+(2018年12月30日現在、リリースされている Windows 版 Chrome 71.0.3578.98 ではこの操作が必要ですが、今後の Chrome のアップデートで不要になります)
 
 ブラウザのアドレスバーに `chrome://flags` と入力します。
 
@@ -403,7 +407,11 @@ TY51822r3 の公式の仕様では GPIO 端子が (標準の設定では) ドラ
 JavaScript のコードに変更を加えると、L チカの動作を変える事ができます。
 試しにいろいろ変えてみましょう。
 
-ただし今はオンラインの LIVE example のコードをそのまま動かしているため、直接変更を加える事はできません。もし自分の GitHub アカウントを持っているなら fork して変更を加えても良いですし、リポジトリページから Download ZIP で全体をダウンロードして、適当なフォルダーに展開しても構いません。
+ただし今はオンラインの LIVE example のコードをそのまま動かしているため、直接変更を加える事はできません。もし自分の GitHub アカウントを持っているならリポジトリを fork して変更を加えても良いですし、Download ZIP で全体をダウンロードして、適当なフォルダーに展開しても構いません。
+
+[リポジトリページ](https://github.com/chirimen-oh/chirimen-TY51822r3)  
+
+LEDblink の example はリポジトリ内の `bc/gpio/LEDblink` にあります。
 
 もし LEDblink フォルダー内のファイルだけをローカルにコピーしてテストする場合は、index.html 内の `blePolyfill.js` の読み込みを 次のようにしてください。
 

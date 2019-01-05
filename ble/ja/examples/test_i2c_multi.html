@@ -1,0 +1,72 @@
+<!doctype html>
+<html><body>
+<script src="https://chirimen.org/chirimen-TY51822r3/bc/polyfill/blePolyfill.js"></script>
+<script src="https://chirimen.org/chirimen-TY51822r3/bc/drivers/i2c-ADT7410.js"></script>
+<script src="https://chirimen.org/chirimen-TY51822r3/bc/drivers/i2c-GP2Y0E03.js"></script>
+<script src="https://chirimen.org/chirimen-TY51822r3/bc/drivers/i2c-grove-light.js"></script>
+<script src="https://chirimen.org/chirimen-TY51822r3/bc/drivers/i2c-grove-accelerometer.js"></script>
+
+<style>
+    table{
+        border:1px solid #000;
+        width:100%;
+        max-width:500px;
+    }
+    th{
+        width:20%;
+    }
+    th,td{
+        border:1px solid #ccc;
+        background:#eee;
+        text-align: center;
+    }
+</style>
+
+<h1>複数の I2C センサー読み取り サンプル</h1>
+<button id="connect">BLE 接続</button><br/><br/>
+
+<table>
+<tr><th colspan="2">温度</th><td id="ADT7410value"></td></tr>
+<tr><th colspan="2">距離</th><td id="GP2Y0E03value"></td></tr>
+<tr><th colspan="2">明るさ</th><td id="GROVELIGHTvalue"></td></tr>
+<tr><th rowspan="3">加速度</th><th>X</th><td id="GROVEACCELEROMETERXvalue"></td></tr>
+<tr><th>Y</th><td id="GROVEACCELEROMETERYvalue"></td></tr>
+<tr><th>Z</th><td id="GROVEACCELEROMETERZvalue"></td></tr>
+</table>
+
+<script>
+const DEVICE_UUID = "928a3d40-e8bf-4b2b-b443-66d2569aed50";
+async function mainFunction() {
+  var bleDevice = await navigator.bluetooth.requestDevice({ filters: [{ services: [DEVICE_UUID] }] });
+  var i2cAccess = await navigator.requestI2CAccess(bleDevice);
+  document.getElementById("connect").hidden = true;
+
+  var port = i2cAccess.ports.get(1);          // I2C I/F の 1番ポートを取得
+  var adt7410 = new ADT7410(port,0x48);
+  var gp2y0e03 = new GP2Y0E03(port,0x40);
+  var grovelight = new GROVELIGHT(port,0x29);
+  var groveaccel = new GROVEACCELEROMETER(port,0x53);
+
+  await adt7410.init();
+  await gp2y0e03.init();
+  await grovelight.init();
+  await groveaccel.init();
+
+  for (;;) {
+    var temperature = await adt7410.read();
+    var distance = await gp2y0e03.read();
+    var light = await grovelight.read();
+    var accel = await groveaccel.read();
+
+    document.getElementById("ADT7410value").innerHTML = temperature + " ℃";
+    document.getElementById("GP2Y0E03value").innerHTML = (distance == null) ? "範囲外" : "distance" + " cm";
+    document.getElementById("GROVELIGHTvalue").innerHTML = light + " Lux";
+    document.getElementById("GROVEACCELEROMETERXvalue").innerHTML = accel.x + " m/s&sup2;";
+    document.getElementById("GROVEACCELEROMETERYvalue").innerHTML = accel.y + " m/s&sup2;";
+    document.getElementById("GROVEACCELEROMETERZvalue").innerHTML = accel.z + " m/s&sup2;";
+    await sleep(1000);
+  }
+}
+document.getElementById("connect").onclick = mainFunction;
+</script>
+</body></html>
