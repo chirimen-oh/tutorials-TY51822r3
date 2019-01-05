@@ -494,4 +494,4 @@ LED1 に接続されている青色 LED と 5 番ポートに接続されてい�
   * [タクトスイッチを押している間だけ LED が光る (ポーリング)](https://chirimen.org/tutorials-TY51822r3/ble/ja/examples/test_switch_poll.html)
   * [タクトスイッチを押している間だけ LED が光る (onchange)](https://chirimen.org/tutorials-TY51822r3/ble/ja/examples/test_switch_onchange.html)
 
-次の『[チュートリアル 2. I2C 編]』では Web I2C API の学習をします。
+次の『[チュートリアル 2. I2C 編](section2.md)』では Web I2C API の学習をします。
