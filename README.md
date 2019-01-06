@@ -24,9 +24,10 @@ JavaScript 未経験者や非同期処理の未経験者はチュートリアル
 * [JavaScript 1 Day 講習 (外部 PDF)](https://webiotmakers.github.io/static/docs/2017/maebashi-js.pdf)
 * [非同期処理 (async await版)](ble/ja/appendix0.md)
 
-FAQ やその他関連資料:
+FAQ やその他関連資料です:
 
 * [CHIRIMEN for Raspberry Pi 3 との違い](ble/ja/diff.md)
+* [i2cdetect について](ble/ja/i2cdetect.md)
 * [TY51822r3 の ファームウェアをビルドする](ble/ja/bridge.md)
 * [良くある質問](faq.md)
 * [Tips 集](tips.md)

@@ -74,7 +74,7 @@ L チカのターゲットの赤色 LED は、7番、BLE 接続表示用の青�
 
 [LEDBlink LIVE example](https://chirimen.org/chirimen-TY51822r3/bc/gpio/LEDblink/)  
 
-![https://chirimen.org/chirimen-TY51822r3/bc/gpio/LEDblink/](imgs/section1/ledblink_1.png)
+[![https://chirimen.org/chirimen-TY51822r3/bc/gpio/LEDblink/](imgs/section1/ledblink_1.png)](https://chirimen.org/chirimen-TY51822r3/bc/gpio/LEDblink/schematic.png)
 
 ## b. コードの作成
 

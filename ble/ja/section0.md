@@ -134,11 +134,11 @@ CHIRIMEN for TY51822r3 のアプリはブラウザ上で動作する Web アプ�
 [https://github.com/chirimen-oh/chirimen-TY51822r3](https://github.com/chirimen-oh/chirimen-TY51822r3)  
 ここから全体をダウンロードしてローカルに動作環境を構築する事もできます。
 
-今回は、LIVE examples の中から、「**GPIO examples**」の「**LEDblink**」のリンクをクリックしてください。
+今回は、LIVE examples の中から、「**GPIO examples**」の「[**LEDblink**](https://chirimen.org/chirimen-TY51822r3/bc/gpio/LEDblink/)」のリンクをクリックしてください。
 
 次のような画面が開きます。まだ動作を開始していませんが、これが「L チカ」のアプリになっており、また動作に必要なブレッドボード上の配線が図示されています。
 
-![LEDBlink](imgs/section0/ledblink_1.png)
+[![LEDBlink](imgs/section0/ledblink_1.png)](https://chirimen.org/chirimen-TY51822r3/bc/gpio/LEDblink/schematic.png)
 
 # 3. 「L チカ」をやってみよう
 無事、TY51822r3 と PC の準備が整ったら、いよいよ L チカに挑戦してみましょう。

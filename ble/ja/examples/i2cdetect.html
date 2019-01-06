@@ -14,6 +14,8 @@ th,td {
 <script src="https://chirimen.org/chirimen-TY51822r3/bc/polyfill/blePolyfill.js"></script>
 
 <h1>I2C detect</h1>
+<div>これは I2C デバイスの動作確認等で用いられる i2c-detect の CHIRIMEN for TY51822r3 版です。</div>
+<div>デバイスの確認には read8() によるリードモードを使用しています。</div>
 <button id="connect">BLE 接続</button><br/><br/>
 <table id="tab">
 <tr><th></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>a</th><th>b</th><th>c</th><th>d</th><th>e</th><th>f</th></tr>
@@ -28,8 +30,8 @@ th,td {
 </table>
 <script>
 
-var first = 0x00;
-var last = 0x7f;
+var first = 0x03;
+var last = 0x77;
 const DEVICE_UUID = "928a3d40-e8bf-4b2b-b443-66d2569aed50";
 
 async function scan_i2c_bus(){

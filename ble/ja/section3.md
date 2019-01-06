@@ -48,7 +48,7 @@ GP2Y0E03 測距センサーは光学式の距離測定モジュールです。�
 このセンサーモジュールには細い7本のケーブルが付属していますが、このままではブレッドボードで使いにくいので、この細いケーブルを 2.54mm ピッチのピンヘッダーに半田付けするなどして加工する必要があります。
 
 [測距センサーモジュール GP2Y0E03](http://akizukidenshi.com/catalog/g/gI-07547/)　(ケーブル加工済)  
-![GP2Y0E03](imgs/section2/gp2y0e03.jpg)
+![GP2Y0E03](imgs/section3/gp2y0e03.jpg)
 
 この測距センサーを使用した例は LIVE example として既に準備されています。
 
@@ -56,11 +56,12 @@ GP2Y0E03 測距センサーは光学式の距離測定モジュールです。�
 
 このセンサーは電源がコア部と IO 部に分かれていたり、アナログ出力を持っている等の事情で端子数が 7 本と多くなっていますが、TY51822r3 からの制御のために使用するのは温度センサーの時と同じく SDA、SCL の 2 本の信号線です。
 
-![GP2Y0E03 ブレッドボード図](imgs/section2/gp2y0e03_1.png)
+[i2c-GP2Y0E03 LIVE example](https://chirimen.org/chirimen-TY51822r3/bc/i2c/i2c-GP2Y0E03/)  
+[![GP2Y0E03 ブレッドボード図](imgs/section3/gp2y0e03_1.png)](https://chirimen.org/chirimen-TY51822r3/bc/i2c/i2c-GP2Y0E03/schematic.png)
 
 図の通りに配線して「BLE 接続」のボタンを押し、動作させるとセンサーから障害物までの距離 (cm) が表示されます。センサーの前に手をかざすなどすると表示が変化するのがわかると思います。
 
-![GP2Y0E03 動作時](imgs/section2/gp2y0e03_2.png)
+![GP2Y0E03 動作時](imgs/section3/gp2y0e03_2.png)
 
 ## コードを見てみる
 
@@ -134,10 +135,10 @@ Grove システムのモジュールにはインターフェースの種類と�
 この Grove I2C のセンサーモジュールとして以下の二つを試してみます。
 
 [Grove - I2C デジタル光センサー](https://www.switch-science.com/catalog/1174/)
-![Grove 光](imgs/section2/grove_light.jpg)
+![Grove 光](imgs/section3/grove_light.jpg)
 
 [GROVE - I2C 三軸加速度センサー ADXL345 搭載](https://www.switch-science.com/catalog/972/)
-![Grove 加速度](imgs/section2/grove_acc.jpg)
+![Grove 加速度](imgs/section3/grove_acc.jpg)
 
 CHIRIMEN for TY51822r3 ではこの 2 つのモジュール用にそれぞれドライバーが準備されており、それを使用した [LIVE example](https://chirimen.org/chirimen-TY51822r3/bc/) があります。
 
@@ -148,7 +149,7 @@ CHIRIMEN for TY51822r3 ではこの 2 つのモジュール用にそれぞれド
 LIVE example は以下の場所にあります。
 
 [LIVE example : i2c-grove-light](https://chirimen.org/chirimen-TY51822r3/bc/i2c/i2c-grove-light/)  
-![grove-light](imgs/section2/grove_light_1.png)
+[![grove-light](imgs/section3/grove_light_1.png)](https://chirimen.org/chirimen-TY51822r3/bc/i2c/i2c-grove-light/schematic.png)
 
 LIVE example を開くとアプリが起動し、ブレッドボード図が表示されます。配線としては、今までの I2C デバイスの example と同じで I2C の信号 SDA、SCL の先に接続する I2C モジュールが変更されているだけです。
 
@@ -190,7 +191,7 @@ var value = await groveLight.read();
 LIVE example は以下の場所にあります。
 
 [LIVE example : i2c-grove-accelerometer](https://chirimen.org/chirimen-TY51822r3/bc/i2c/i2c-grove-accelerometer/)  
-![grove-accelerometer](imgs/section2/grove_acc_1.png)
+[![grove-accelerometer](imgs/section3/grove_acc_1.png)](https://chirimen.org/chirimen-TY51822r3/bc/i2c/i2c-grove-accelerometer/schematic.png)  
 
 LIVE example のアプリを起動して表示されるブレッドボード図を見ると光センサーと同じで Grove のセンサーモジュールが違うだけですね。  
 
@@ -237,11 +238,11 @@ LIVE example のアプリを起動して表示されるブレッドボード図�
 Grove I2C ハブ経由での接続は次のようになります。  
 
 [GROVE I2C ハブ](https://www.switch-science.com/catalog/796/)
-![GROVE I2C ハブ](imgs/section2/grove_i2chub.jpg)
+![GROVE I2C ハブ](imgs/section3/grove_i2chub.jpg)
 
 せっかくですからここまでで紹介した I2C センサーを全部まとめて繋いでみます。Grove I2C HUB 経由で繋いだ例が下の図です。
 
-![Grove I2C モジュールの接続](imgs/section2/grove_breadboard.png)
+![Grove I2C モジュールの接続](imgs/section3/grove_breadboard.png)
 
 
 
@@ -288,8 +289,7 @@ async function mainFunction() {
   await gp2y0e03.init();
   await grovelight.init();
   await groveaccel.init();
-　　・
-　　・
+  ...
 ```
 
 後は 1 秒に 1 回の無限ループで各センサーからの値を読み取り、表示するだけです。  
@@ -297,8 +297,6 @@ async function mainFunction() {
 値の読み取りはどのセンサーのインスタンスも `read()` を呼ぶだけですが、距離センサーは測定範囲外の場合は `null` を返しますし、加速度センサーは `x`、`y`、`z` のそれぞれの値をプロパティとして持つオブジェクトを返します。このようにドライバーによって多少の違いがありますのでそれぞれ適切に表示する必要があります。
 
 ```javascript
-　　・
-　　・
   for (;;) {
     var temperature = (await adt7410.read());
     var distance = await gp2y0e03.read();
@@ -316,9 +314,10 @@ async function mainFunction() {
 document.getElementById("connect").onclick = mainFunction;
 ```
 
-うまく動きましたか?
+うまく動きましたか?  
+正常に動作すると下のような画面になります。
 
-![I2C センサー](/imgs/section2/grove_1.png)
+![I2C センサー](/imgs/section3/grove_1.png)
 
 このプログラムは次のリンクから試す事ができます。  
 [複数の I2C センサー読み取り サンプル](examples/test_i2c_multi.html)
@@ -337,6 +336,17 @@ document.getElementById("connect").onclick = mainFunction;
 
 一方、I2C デバイスによってはこのアドレスを設定によって変更でき、アドレスの衝突を回避できる場合があります。ただしアドレスの変更はデバイスの基板上でハードウェア的（電気的）に設定するジャンパ等によって設定します（ジャンパはピンヘッダとして用意され、ジャンパ線などで設定できるものもありますが、多くの場合は半田を盛ってジャンパとするタイプです。詳しくは各デバイスを購入すると付属しているデータシートを参照してください）。
 
+## i2cdetect
+
+CHIRIMEN for Raspberry Pi 3 では I2C デバイスの接続を確認するためにターミナルから `i2cdetect` というコマンドを使用する事ができましたが、CHIRIMEN for TY51822r3 の環境はこれに相当する機能を持っていません。  
+
+完全に互換というわけではありませんが、代替として I2C バスをスキャンする Web アプリを準備してありますので、詳しくは次のリンクをご覧ください :  
+
+[i2cdetect について](i2cdetect.md)
+
+このチュートリアルで使用した I2C デバイスを全部接続した状態で i2cdetect Web アプリを実行した場合次のような画面になります。  
+![i2cdetect 画面](imgs/i2cdetect/i2cdetect.png)  
+
 # まとめ
 
 このチュートリアルでは下記について学びました。
@@ -351,7 +361,7 @@ document.getElementById("connect").onclick = mainFunction;
 このチュートリアルで書いたコードは以下のページで参照できます:
 
 * [GitHub リポジトリで参照](https://github.com/chirimen-oh/tutorials-TY51822r3/tree/master/ble/ja/examples)
-* [色々なセンサーをまとめて繋いでみる](https://github.com/chirimen-oh/tutorials-TY51822r3/tree/master/ble/ja/examples/test_i2c_multi.html)
+* [色々なセンサーをまとめて繋いでみる](https://chirimen.org/tutorials-TY51822r3/ble/ja/examples/test_i2c_multi.html)
 
 # さいごに
 

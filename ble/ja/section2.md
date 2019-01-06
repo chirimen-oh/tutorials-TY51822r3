@@ -88,7 +88,7 @@ I2Cバス上、TY51822r3 がマスター、ADT7410がスレーブになります
 
 さて、[**i2c-ADT7410 の LIVE example**](https://chirimen.org/chirimen-TY51822r3/bc/i2c/i2c-ADT7410/) のページでは、次のようにブレッドボードの配線図付きで ADT7410 を使用した温度センサーのアプリが開きます。これらのパーツを画面の通りに接続してみてください。
 
-![breadboard](imgs/section2/adt7410_1.png)  
+[![breadboard](imgs/section2/adt7410_1.png)](https://chirimen.org/chirimen-TY51822r3/bc/i2c/i2c-ADT7410/schematic.png)  
 
 I2C の信号、SCL、SDA はこの図で TY51822r3 の 左下、P0_29 と P0_30 に割り当てられています。
 これは CHIRIMEN for TY51822r3 の環境での割り当てであって MBED の TY51822r3 公式ページでのピン割り当てとは異なる事に注意してください。
