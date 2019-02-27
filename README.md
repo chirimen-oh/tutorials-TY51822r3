@@ -1,3 +1,7 @@
+# 301 MOVED Permanently
+
+https://github.com/chirimen-oh/tutorials/tree/master/ty51822r3/ja
+
 ## CHIRIMEN for  TY51822r3 チュートリアル
 
 CHIRIMEN for TY51822r3 を用いた IoT システムプロトタイピングスキル習得のためのチュートリアル資料です。
